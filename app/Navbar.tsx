@@ -21,7 +21,7 @@ const Navbar = () => {
           href='https://drive.google.com/file/d/1zLCdRl9WED5RuoAI4pxzqx-bT6y77trI/view'
           target='_blank'
         >
-          JÄSENKESI?
+          JÄSENEKSI?
         </Link>
         <Link className={styles.links__link} href='/contacts'>
           YHTEYSTIEDOT

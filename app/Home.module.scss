@@ -9,10 +9,17 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 7.5rem 20vw;
+  padding: 5rem 20vw;
+
+  &__image {
+    transform: scale(0.75, 0.75);
+    -ms-transform: scale(0.75, 0.75);
+    -webkit-transform: scale(0.75, 0.75);
+    z-index: 1;
+  }
 }
 
-.landingInfo {
+.landingContent {
   margin-top: 8rem;
   width: 50rem;
 
@@ -21,18 +28,19 @@
     flex-direction: row;
     align-items: baseline;
     color: $secondary-text-color;
-
     &__ttymi {
       padding: 0;
       margin: 0;
       font-size: 8rem;
       font-weight: 600;
-      letter-spacing: 1.5rem;
+      letter-spacing: 1.25rem;
       margin-right: 1rem;
     }
     &__ry {
       padding: 0;
       margin: 0;
+      font-weight: 500;
+      letter-spacing: 0.5rem;
       font-size: 4rem;
     }
   }
@@ -41,15 +49,190 @@
     color: $secondary-text-color;
     font-size: 1.75rem;
     margin-left: 1rem;
+    margin-bottom: 2.5rem;
   }
 
   &__button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: $primary-color;
+    background-color: white;
+    border-radius: 1rem;
+    border: 2px solid transparent;
+    padding: 0rem 1.5rem;
     margin-left: 1rem;
+    box-shadow: $shadow;
+    cursor: pointer;
+    width: fit-content;
+    transition: all 0.15s ease-in-out;
+
+    &__text {
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: 0.025rem;
+      margin: 1.25rem 0.5rem;
+    }
+    &__triangle {
+      width: 0;
+      height: 0;
+      border-top: 1rem solid transparent;
+      border-bottom: 1rem solid transparent;
+      border-left: 1.75rem solid $primary-color;
+      margin-right: 0.75rem;
+      margin-left: 0.5rem;
+    }
+
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+      border: 2px solid white;
+      .landingContent__button__triangle {
+        transition: all 0.15s ease-in-out;
+        border-left: 1.75rem solid white;
+      }
+    }
   }
 }
 
-.image {
-  transform: scale(0.75, 0.75);
-  -ms-transform: scale(0.75, 0.75);
-  -webkit-transform: scale(0.75, 0.75);
+.infoBubble {
+  background-color: white;
+  color: $text-color;
+  margin: 3rem 6rem;
+  border-radius: 1rem;
+  box-shadow: $shadow;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 2.5rem 4rem 4rem 2.5rem;
+  }
+
+  &__content {
+    width: 75%;
+  }
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  &__text {
+    font-size: 1.75rem;
+    line-height: 1.5;
+  }
+  &__image {
+    margin-right: 3.5rem;
+    margin-left: 0.5rem;
+  }
+}
+
+.events {
+  color: $secondary-text-color;
+  &__container {
+    padding: 3rem 6rem;
+  }
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  &__content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: $primary-color;
+    background-color: white;
+    border-radius: 1rem;
+    border: 2px solid transparent;
+    padding: 0rem 1.5rem;
+    margin-left: 2rem;
+    box-shadow: $shadow;
+    cursor: pointer;
+    width: fit-content;
+    transition: all 0.15s ease-in-out;
+
+    &__text {
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.025rem;
+      margin: 1rem 0.25rem;
+    }
+    &__triangle {
+      width: 0;
+      height: 0;
+      border-top: 0.75rem solid transparent;
+      border-bottom: 0.75rem solid transparent;
+      border-left: 1.25rem solid $primary-color;
+      margin-right: 0.5rem;
+      margin-left: 0.25rem;
+    }
+
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+      border: 2px solid white;
+      .events__button__triangle {
+        transition: all 0.15s ease-in-out;
+        border-left: 1.25rem solid white;
+      }
+    }
+  }
+}
+
+.event {
+  margin: 2rem;
+  background-color: white;
+  color: $text-color;
+  border-radius: 1rem;
+  width: 30rem;
+  overflow: hidden;
+  box-shadow: $shadow;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05, 1.05);
+    -ms-transform: scale(1.05, 1.05);
+    -webkit-transform: scale(1.05, 1.05);
+  }
+
+  &__image {
+    width: 100%;
+    height: 15rem;
+    border-radius: 1rem 1rem 0 0;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    margin: 0;
+    padding: 1rem;
+    background-color: red;
+    border-radius: 2rem 2rem 0 0;
+  }
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  &__text {
+    font-size: 1.25rem;
+    line-height: 1.45;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 8; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
 }

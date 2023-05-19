@@ -11,6 +11,7 @@ const getEvent = async (eventId: string) => {
 const EventPage = async ({ params }: any) => {
   const event: EventType = await getEvent(params.id);
 
+  console.log(event.content);
   return (
     <div>
       <h1>{event?.title}</h1>
