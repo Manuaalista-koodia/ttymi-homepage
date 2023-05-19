@@ -2,14 +2,19 @@
 
 .home {
   background: $backgroud-color;
+}
 
+.landing {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 7.5rem 20vw;
 }
 
 .landingInfo {
-  width: 100vw;
-  height: 80vh;
+  margin-top: 8rem;
+  width: 50rem;
 
   &__title {
     display: flex;
@@ -20,19 +25,26 @@
     &__ttymi {
       padding: 0;
       margin: 0;
-      font-size: 6rem;
+      font-size: 8rem;
+      font-weight: 600;
+      letter-spacing: 1.5rem;
       margin-right: 1rem;
     }
     &__ry {
       padding: 0;
       margin: 0;
-      font-size: 3rem;
+      font-size: 4rem;
     }
   }
 
   &__subtitle {
     color: $secondary-text-color;
-    font-size: 1rem;
+    font-size: 1.75rem;
+    margin-left: 1rem;
+  }
+
+  &__button {
+    margin-left: 1rem;
   }
 }
 

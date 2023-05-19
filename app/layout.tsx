@@ -7,7 +7,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html>
       <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Navbar />
-        <main style={{ flex: 1 }}>{children}</main>
+        <main style={{ flex: 1, marginTop: '3rem' }}>{children}</main>
         <Footer />
       </body>
     </html>
