@@ -1,0 +1,43 @@
+@import '../styles/variables.scss';
+
+.home {
+  background: $backgroud-color;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.landingInfo {
+  width: 100vw;
+  height: 80vh;
+
+  &__title {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    color: $secondary-text-color;
+
+    &__ttymi {
+      padding: 0;
+      margin: 0;
+      font-size: 6rem;
+      margin-right: 1rem;
+    }
+    &__ry {
+      padding: 0;
+      margin: 0;
+      font-size: 3rem;
+    }
+  }
+
+  &__subtitle {
+    color: $secondary-text-color;
+    font-size: 1rem;
+  }
+}
+
+.image {
+  transform: scale(0.75, 0.75);
+  -ms-transform: scale(0.75, 0.75);
+  -webkit-transform: scale(0.75, 0.75);
+}

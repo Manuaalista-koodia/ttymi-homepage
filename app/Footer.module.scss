@@ -1,0 +1,40 @@
+@import '../styles/variables.scss';
+
+.footer {
+  background-color: $primary-color-dark;
+  color: $secondary-text-color;
+  padding: 20px;
+  text-align: center;
+  align-items: center;
+  max-height: 4rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    //width: 100%;
+    //max-width: 10rem;
+
+    &__text {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 5rem;
+  }
+
+  &__logo {
+    width: 5rem;
+    height: 5rem;
+  }
+}

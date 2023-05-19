@@ -1,0 +1,36 @@
+@import '../styles/variables.scss';
+
+.navbar {
+  background-color: $primary-color;
+  padding: 0.5rem;
+  max-height: 3rem;
+
+  display: flex;
+  justify-content: space-between;
+
+  &__logo {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__link {
+    color: $secondary-text-color;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $secondary-text-color;
+      color: $text-color;
+    }
+  }
+}
