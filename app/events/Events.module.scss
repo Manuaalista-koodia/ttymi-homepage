@@ -1,0 +1,71 @@
+@import '../../styles/variables.scss';
+
+.events {
+  background: $backgroud-color;
+  color: white;
+
+  &__container {
+    margin: 0;
+    padding: 2rem 6rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0 0 4rem 0;
+  }
+}
+
+.event {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  color: $text-color;
+  height: 35rem;
+  margin-bottom: 4rem;
+  box-shadow: $shadow;
+
+  &__image {
+    img {
+      height: 100%;
+      max-width: 35rem;
+      object-fit: cover;
+    }
+  }
+  &__content {
+    padding: 2rem;
+    overflow: hidden;
+  }
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+  }
+  &__text {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.45;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 14; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+  &__date {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    &__text {
+      font-size: 1.45rem;
+      font-weight: 600;
+      margin: 0 1.5rem 0 0.5rem;
+    }
+  }
+}

@@ -2,8 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Home.module.scss';
 import { EventType } from '@/types';
+import { getImgComponent } from '@/utils';
 
-//Gets 3 latest events from pocketbase. Also sorts them by date.
+// Gets 3 latest events from pocketbase. Also sorts them by date.
 const getEvents = async () => {
   const res = await fetch('http://127.0.0.1:8090/api/collections/events/records?page=1&perPage=3&sort=-datetime', {
     cache: 'no-store',
@@ -13,14 +14,25 @@ const getEvents = async () => {
 };
 
 const EventCard = ({ event }: { event: EventType }) => {
+  const date = new Date(event.datetime);
   return (
     <Link href={`events/${event.id}`}>
-      <div className={styles.event__image}>
-        <Image src={require('../public/logo-bg.png')} alt={`${event.title}-image`} />
-      </div>
+      <div className={styles.event__image}>{getImgComponent(event)}</div>
       <div className={styles.event__content}>
         <div className={styles.event__title}>{event.title}</div>
-        <div className={styles.event__date}>{event.datetime}</div>
+        <div className={styles.event__date}>
+          <Image src={require('../public/calendar.png')} alt='calendar' />
+          <p className={styles.event__date__text}>{date.toLocaleDateString('fi-FI', {})}</p>
+          <Image src={require('../public/clock.png')} alt='location' />
+          <p className={styles.event__date__text}>
+            {date.toLocaleTimeString('fi-FI', {
+              hour12: false,
+              hour: 'numeric',
+              minute: 'numeric',
+              timeZone: 'UTC',
+            })}
+          </p>
+        </div>
         <div className={styles.event__text}>{event.content}</div>
       </div>
     </Link>
@@ -29,7 +41,6 @@ const EventCard = ({ event }: { event: EventType }) => {
 
 const HomePage = async () => {
   const events = await getEvents();
-
   return (
     <div className={styles.home}>
       <div className={styles.landing}>
@@ -61,9 +72,11 @@ const HomePage = async () => {
           <div className={styles.infoBubble__content}>
             <h1 className={styles.infoBubble__title}>MIKÄ IHMEEN TTYMI?</h1>
             <p className={styles.infoBubble__text}>
-              TTYMI ry on Hervannasta lähtöinen opiskelijakerho. TTYMI on mukana tekemässä Tamperelaista opiskelija
-              yhteisöä mm. järjestämällä erilaisia tapahtumia. Ydintoimintaamme onkin kaikille avoimien Teekkarivisan
-              järjestäminen. Jäsenemme voit tunnistaa vihreistä liiveistä ja manuaalisesta menosta.
+              TTYMI ry on Hervannasta lähtöinen opiskelijakerho. TTYMI on mukana tekemässä Tamperelaista
+              opiskelijayhteisöä mm. järjestämällä erilaisia tapahtumia. Ydintoimintaamme onkin kaikille avoimien
+              Teekkarivisan järjestäminen. TTYMI osallistuu ahkerasti myös ylioppilaskunnan ja teekkariyhdistyksen
+              tapahtumiin, kuten erilaisiin rastikierroksiin ja tietenkin Wappuun! Jäsenemme voit tunnistaa vihreistä
+              liiveistä ja manuaalisesta menosta.
             </p>
             <p className={styles.infoBubble__text}>Voit seurata toimintaamme parhaiten Instagramista!</p>
           </div>
