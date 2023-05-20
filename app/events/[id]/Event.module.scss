@@ -6,6 +6,10 @@
     display: flex;
     flex-direction: row;
     min-height: 100%;
+
+    @media only screen and (max-width: 1300px) {
+      flex-direction: column;
+    }
   }
   &__image {
     margin: 10rem 5rem;
@@ -14,9 +18,22 @@
       width: 35rem;
       object-fit: cover;
     }
+
+    @media only screen and (max-width: 1300px) {
+      margin: 2rem 0rem 0 1rem;
+
+      img {
+        max-height: 25rem;
+        width: 25rem;
+      }
+    }
   }
   &__content {
     margin: 5rem 5rem 3rem 1rem;
+
+    @media only screen and (max-width: 1300px) {
+      margin: 2rem 0rem 0 1rem;
+    }
   }
   &__title {
     font-size: 3.5rem;

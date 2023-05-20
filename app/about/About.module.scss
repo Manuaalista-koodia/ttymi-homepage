@@ -8,6 +8,11 @@
     z-index: 5;
     margin: 19rem 10rem;
     width: 45rem;
+
+    @media only screen and (max-width: 1300px) {
+      margin: 19rem 5rem;
+      width: 35rem;
+    }
   }
   &__title {
     color: $secondary-text-color;
@@ -15,6 +20,10 @@
     font-weight: 600;
     letter-spacing: 0.1rem;
     text-shadow: 2px 2px 5px #000000;
+
+    @media only screen and (max-width: 1300px) {
+      font-size: 2rem;
+    }
   }
 
   &__container {
@@ -34,6 +43,11 @@
     //height: 40rem;
     width: 80%;
 
+    @media only screen and (max-width: 1300px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     &__info {
       display: flex;
       flex-direction: row;
@@ -42,12 +56,20 @@
       font-size: 2.5rem;
       font-weight: 600;
       margin-bottom: 1rem;
+
+      @media only screen and (max-width: 1300px) {
+        font-size: 2rem;
+      }
     }
 
     &__text {
       font-size: 2rem;
       margin-top: 2rem;
       line-height: 1.5;
+
+      @media only screen and (max-width: 1300px) {
+        font-size: 1.5rem;
+      }
     }
     &__img {
       margin-left: 2rem;
