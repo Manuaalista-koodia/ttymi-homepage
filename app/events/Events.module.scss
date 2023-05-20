@@ -24,6 +24,13 @@
   height: 35rem;
   margin-bottom: 4rem;
   box-shadow: $shadow;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    transform: scale(1.0075, 1.0075);
+    -ms-transform: scale(1.0075, 1.0075);
+    -webkit-transform: scale(1.0075, 1.0075);
+  }
 
   &__image {
     img {
