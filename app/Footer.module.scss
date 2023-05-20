@@ -7,6 +7,7 @@
   text-align: center;
   align-items: center;
   max-height: 4rem;
+  z-index: 1000;
 
   display: flex;
   flex-direction: row;
@@ -28,9 +29,25 @@
   &__links {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
-    max-width: 5rem;
+    max-width: 8rem;
+  }
+  &__linkbg {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin: 0rem;
+  }
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   &__logo {
