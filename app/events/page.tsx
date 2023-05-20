@@ -5,9 +5,15 @@ import { getImgComponent } from '@/utils';
 import { EventType } from '@/types';
 
 const getEvents = async () => {
-  const res = await fetch('http://127.0.0.1:8090/api/collections/events/records?sort=-datetime', { cache: 'no-store' });
-  const data = await res.json();
-  return data?.items as EventType[];
+  try {
+    const res = await fetch('http://127.0.0.1:8090/api/collections/events/records?sort=-datetime', {
+      cache: 'no-store',
+    });
+    const data = await res.json();
+    return data?.items as EventType[];
+  } catch (e) {
+    return [];
+  }
 };
 
 const Event = ({ event }: { event: EventType }) => {
@@ -43,9 +49,13 @@ const EventsPage = async () => {
     <div className={styles.events}>
       <div className={styles.events__container}>
         <h1 className={styles.events__title}>TAPAHTUMAT</h1>
-        {events?.map((event) => {
-          return <Event key={event.id} event={event} />;
-        })}
+        {events.length > 0 ? (
+          events?.map((event) => {
+            return <Event key={event.id} event={event} />;
+          })
+        ) : (
+          <p className={styles.events__text}>404 Tapahtumien haku epäonnistui...</p>
+        )}
       </div>
     </div>
   );

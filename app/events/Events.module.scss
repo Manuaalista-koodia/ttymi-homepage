@@ -7,6 +7,7 @@
   &__container {
     margin: 0;
     padding: 2rem 6rem;
+    min-height: 78vh;
   }
 
   &__title {
@@ -44,7 +45,7 @@
 
   &__image {
     img {
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 1/1;
       height: 100%;
       ///max-width: 35rem;
       object-fit: cover;

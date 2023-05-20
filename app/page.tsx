@@ -6,17 +6,21 @@ import { getImgComponent } from '@/utils';
 
 // Gets 3 latest events from pocketbase. Also sorts them by date.
 const getEvents = async () => {
-  const res = await fetch('http://127.0.0.1:8090/api/collections/events/records?page=1&perPage=3&sort=-datetime', {
-    cache: 'no-store',
-  });
-  const data = await res.json();
-  return data?.items as EventType[];
+  try {
+    const res = await fetch('http://127.0.0.1:8090/api/collections/events/records?page=1&perPage=3&sort=-datetime', {
+      cache: 'no-store',
+    });
+    const data = await res.json();
+    return data?.items as EventType[];
+  } catch (e) {
+    return [];
+  }
 };
 
 const EventCard = ({ event }: { event: EventType }) => {
   const date = new Date(event.datetime);
   return (
-    <Link href={`events/${event.id}`}>
+    <Link className={styles.event} href={`events/${event.id}`}>
       <div className={styles.event__image}>{getImgComponent(event)}</div>
       <div className={styles.event__content}>
         <div className={styles.event__title}>{event.title}</div>
@@ -56,10 +60,14 @@ const HomePage = async () => {
             </p>
           </div>
 
-          <div className={styles.landingContent__button}>
+          <Link
+            className={styles.landingContent__button}
+            href='https://drive.google.com/file/d/1zLCdRl9WED5RuoAI4pxzqx-bT6y77trI/view'
+            target='_blank'
+          >
             <div className={styles.landingContent__button__triangle}></div>
             <p className={styles.landingContent__button__text}>JÄSENEKSI?</p>
-          </div>
+          </Link>
         </div>
 
         <Image className={styles.landing__image} src={require('../public/kyssäri.png')} alt='question-mark' />
@@ -87,13 +95,13 @@ const HomePage = async () => {
         <div className={styles.events__container}>
           <h1 className={styles.events__title}>TAPAHTUMAT</h1>
           <div className={styles.events__content}>
-            {events?.map((event) => {
-              return (
-                <div key={`event-${event.id}`} className={styles.event}>
-                  <EventCard event={event} />
-                </div>
-              );
-            })}
+            {events.length > 0 ? (
+              events?.map((event) => {
+                return <EventCard key={`event-${event.id}`} event={event} />;
+              })
+            ) : (
+              <p>404 Tapahtumien haku epäonnistui...</p>
+            )}
           </div>
 
           <Link className={styles.events__button} href={'/events'}>

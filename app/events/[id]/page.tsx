@@ -4,15 +4,21 @@ import { getImgComponent } from '../../../utils';
 import styles from './Event.module.scss';
 
 const getEvent = async (eventId: string) => {
-  const res = await fetch(`http://127.0.0.1:8090/api/collections/events/records/${eventId}`, {
-    next: { revalidate: 10 },
-  });
-  const data = await res.json();
-  return data as EventType;
+  try {
+    const res = await fetch(`http://127.0.0.1:8090/api/collections/events/records/${eventId}`, {
+      next: { revalidate: 10 },
+    });
+    const data = await res.json();
+    return data as EventType;
+  } catch (e) {
+    return null;
+  }
 };
 
 const EventPage = async ({ params }: any) => {
-  const event: EventType = await getEvent(params.id);
+  const event: EventType | null = await getEvent(params.id);
+  if (!event) return null;
+
   const date = new Date(event.datetime);
 
   return (
