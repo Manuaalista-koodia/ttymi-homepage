@@ -50,16 +50,31 @@ const Navbar = () => {
               alt='menu-button'
               onClick={() => openMenu()}
             />
-            {menuOpen && (
+            {
               <div
                 className={
                   !menuOpen ? `${styles.links__mobile}` : `${styles.links__mobile} ${styles.links__mobile__active}`
                 }
               >
-                <p>tietoa</p>
-                <p>tapahtumat</p>
+                <Link className={styles.links__link} href='/about' onClick={() => setMenuOpen(false)}>
+                  <p className={styles.links__mobile__text}>TIETOA</p>
+                </Link>
+                <Link className={styles.links__link} href='/events' onClick={() => setMenuOpen(false)}>
+                  <p className={styles.links__mobile__text}>TAPAHTUMAT</p>
+                </Link>
+                <Link
+                  className={styles.links__link}
+                  href='https://drive.google.com/file/d/1zLCdRl9WED5RuoAI4pxzqx-bT6y77trI/view'
+                  target='_blank'
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <p className={styles.links__mobile__text}>JÄSENEKSI?</p>
+                </Link>
+                <Link className={styles.links__link} href='/contacts' onClick={() => setMenuOpen(false)}>
+                  <p className={styles.links__mobile__text}>YHTEYSTIEDOT</p>
+                </Link>
               </div>
-            )}
+            }
           </div>
         )}
       </>

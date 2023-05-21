@@ -320,7 +320,7 @@
   color: $text-color;
   border-radius: 1rem;
   width: 32rem;
-  height: 46rem;
+  height: 42rem;
   overflow: hidden;
   box-shadow: $shadow;
   transition: all 0.15s ease-in-out;
@@ -426,7 +426,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 8; /* number of lines to show */
+    -webkit-line-clamp: 6; /* number of lines to show */
     -webkit-box-orient: vertical;
     @media only screen and (max-width: 1300px) {
       -webkit-line-clamp: 6; /* number of lines to show */

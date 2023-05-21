@@ -1,4 +1,7 @@
+'use client';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { EventType } from '../../../types';
 import { getImgComponent } from '../../../utils';
 import styles from './Event.module.scss';
@@ -16,6 +19,7 @@ const getEvent = async (eventId: string) => {
 };
 
 const EventPage = async ({ params }: any) => {
+  const router = useRouter();
   const event: EventType | null = await getEvent(params.id);
   if (!event) return null;
 
@@ -24,6 +28,9 @@ const EventPage = async ({ params }: any) => {
   return (
     <div className={styles.event}>
       <div className={styles.event__container}>
+        <div className={styles.event__back} onClick={() => router.back()}>
+          <Image className={styles.event__back__icon} src={require('../../../public/arrow-left.png')} alt='calendar' />
+        </div>
         <div className={styles.event__image}>{getImgComponent(event)}</div>
         <div className={styles.event__content}>
           <h1 className={styles.event__title}>{event?.title}</h1>

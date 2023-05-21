@@ -4,7 +4,7 @@
   background-color: $primary-color;
   padding: 0.5rem;
   height: $navbar-height;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -30,7 +30,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 0.5rem;
+  margin-right: 1.5rem;
 
   &__link {
     color: $secondary-text-color;
@@ -48,19 +48,28 @@
   }
 
   &__mobile {
+    display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
     position: fixed;
     top: $navbar-height;
     right: 0;
     width: 70%;
     height: 100vh;
+    padding: 2rem 0rem;
     background-color: $primary-color;
     transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.25s ease-in-out;
     z-index: 1000;
 
     &__active {
       transform: translateX(0);
+    }
+
+    &__text {
+      font-size: 1.5rem;
+      margin: 0.5rem;
     }
   }
 }

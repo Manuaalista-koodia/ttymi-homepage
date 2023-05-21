@@ -13,6 +13,14 @@
       margin: 19rem 5rem;
       width: 35rem;
     }
+    @media only screen and (max-width: 768px) {
+      margin: 19rem 2rem;
+      width: 25rem;
+    }
+    @media only screen and (max-width: 540px) {
+      margin: 19rem 1rem;
+      width: 20rem;
+    }
   }
   &__title {
     color: $secondary-text-color;
@@ -23,6 +31,9 @@
 
     @media only screen and (max-width: 1300px) {
       font-size: 2rem;
+    }
+    @media only screen and (max-width: 768px) {
+      font-size: 1.5rem;
     }
   }
 
@@ -42,10 +53,12 @@
     padding: 3rem 6rem;
     //height: 40rem;
     width: 80%;
+    overflow-x: hidden;
 
     @media only screen and (max-width: 1300px) {
       flex-direction: column;
       align-items: center;
+      padding: 3rem 2.4rem;
     }
 
     &__info {
@@ -60,6 +73,9 @@
       @media only screen and (max-width: 1300px) {
         font-size: 2rem;
       }
+      @media only screen and (max-width: 768px) {
+        font-size: 1.5rem;
+      }
     }
 
     &__text {
@@ -70,12 +86,22 @@
       @media only screen and (max-width: 1300px) {
         font-size: 1.5rem;
       }
+      @media only screen and (max-width: 768px) {
+        font-size: 1.2rem;
+      }
     }
     &__img {
       margin-left: 2rem;
       transform: scale(1.1, 1.1);
       -ms-transform: scale(1.1, 1.1);
       -webkit-transform: scale(1.1, 1.1);
+
+      @media only screen and (max-width: 768px) {
+        margin: -5rem 0 0 1rem;
+        transform: scale(0.75, 0.75);
+        -ms-transform: scale(0.75, 0.75);
+        -webkit-transform: scale(0.75, 0.75);
+      }
     }
   }
 }
