@@ -12,4 +12,10 @@ yarn dev
 pnpm dev
 ```
 
+Next run the Pocketbase backend:
+
+```bash
+./pocketbase serve
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
