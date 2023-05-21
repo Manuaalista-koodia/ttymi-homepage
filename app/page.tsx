@@ -25,9 +25,9 @@ const EventCard = ({ event }: { event: EventType }) => {
       <div className={styles.event__content}>
         <div className={styles.event__title}>{event.title}</div>
         <div className={styles.event__date}>
-          <Image src={require('../public/calendar.png')} alt='calendar' />
+          <Image className={styles.event__date__icon} src={require('../public/calendar.png')} alt='calendar' />
           <p className={styles.event__date__text}>{date.toLocaleDateString('fi-FI', {})}</p>
-          <Image src={require('../public/clock.png')} alt='location' />
+          <Image className={styles.event__date__icon} src={require('../public/clock.png')} alt='location' />
           <p className={styles.event__date__text}>
             {date.toLocaleTimeString('fi-FI', {
               hour12: false,

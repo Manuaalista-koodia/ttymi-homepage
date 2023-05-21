@@ -8,12 +8,21 @@
   position: fixed;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   z-index: 1000;
 
   &__logo {
     width: 3rem;
     height: 3rem;
     margin-left: 0.5rem;
+  }
+
+  &__icon {
+    margin-right: 1.25rem;
+
+    transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    -webkit-transform: scale(1.1, 1.1);
   }
 }
 
@@ -35,6 +44,23 @@
     &:hover {
       background-color: $secondary-text-color;
       color: $text-color;
+    }
+  }
+
+  &__mobile {
+    flex-direction: column;
+    position: fixed;
+    top: $navbar-height;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    background-color: $primary-color;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+
+    &__active {
+      transform: translateX(0);
     }
   }
 }
