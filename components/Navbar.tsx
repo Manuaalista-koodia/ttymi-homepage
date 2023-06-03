@@ -85,7 +85,7 @@ const Navbar = () => {
         ) : (
           <div>
             <Image
-              className={styles.navbar__icon}
+              className={menuOpen ? styles.navbar__icon__close : styles.navbar__icon__open}
               src={menuOpen ? require('../public/close.png') : require('../public/menu-button.png')}
               alt='menu-button'
               onClick={() => openMenu()}

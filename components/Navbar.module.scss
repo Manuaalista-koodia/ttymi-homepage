@@ -18,11 +18,16 @@
   }
 
   &__icon {
-    margin-right: 1.25rem;
-
-    transform: scale(1.1, 1.1);
-    -ms-transform: scale(1.1, 1.1);
-    -webkit-transform: scale(1.1, 1.1);
+    &__close {
+      margin-right: 1.75rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    &__open {
+      margin-right: 1.75rem;
+      width: 1.5rem;
+      height: 1.25rem;
+    }
   }
 }
 
