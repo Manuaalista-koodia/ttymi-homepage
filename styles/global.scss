@@ -1,4 +1,5 @@
 @import './variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 html,
 body {
@@ -6,7 +7,7 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   @font-face {
-    font-family: 'OpenSans';
+    font-family: 'Montserrat';
     src: url('../assets/fonts/Montserrat/Montserrat-Black.ttf');
     src: url('../assets/fonts/Montserrat/Montserrat-BlackItalic.ttf');
     src: url('../assets/fonts/Montserrat/Montserrat-Bold.ttf');
@@ -25,8 +26,6 @@ body {
     src: url('../assets/fonts/Montserrat/Montserrat-SemiBoldItalic.ttf');
     src: url('../assets/fonts/Montserrat/Montserrat-Thin.ttf');
     src: url('../assets/fonts/Montserrat/Montserrat-ThinItalic.ttf');
-    font-weight: 400;
-    font-style: normal;
   }
 
   *::-webkit-scrollbar {
