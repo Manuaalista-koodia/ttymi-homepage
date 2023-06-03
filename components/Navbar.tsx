@@ -42,7 +42,7 @@ const Links = ({
       >
         <p className={isMobile ? styles.links__mobile__text : ''}>JÄSENEKSI?</p>
       </Link>
-      {/* 
+
       <Link
         className={styles.links__link}
         href='http://uno.ttymi.fi/'
@@ -51,7 +51,7 @@ const Links = ({
       >
         <p className={isMobile ? styles.links__mobile__text : ''}>UNO</p>
       </Link>
-      */}
+
       <Link className={styles.links__link} href='/contacts' onClick={() => isMobile && setMenuOpen(false)}>
         <p className={isMobile ? styles.links__mobile__text : ''}>YHTEYSTIEDOT</p>
       </Link>
@@ -61,9 +61,10 @@ const Links = ({
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
+    window.innerWidth < 768 ? setIsMobile(true) : setIsMobile(false);
     window.addEventListener('resize', () => {
       window.innerWidth < 768 ? setIsMobile(true) : setIsMobile(false);
     });
@@ -85,7 +86,7 @@ const Navbar = () => {
           <div>
             <Image
               className={styles.navbar__icon}
-              src={require('../public/menu-button.png')}
+              src={menuOpen ? require('../public/close.png') : require('../public/menu-button.png')}
               alt='menu-button'
               onClick={() => openMenu()}
             />
