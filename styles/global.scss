@@ -1,8 +1,23 @@
+@import './variables.scss';
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+
+  *::-webkit-scrollbar {
+    width: 0.75rem;
+  }
+  *::-webkit-scrollbar-track {
+    background: $primary-color;
+    border-left: 2px solid $primary-color;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 1rem;
+    transition: 1s;
+  }
 }
 
 a {

@@ -1,8 +1,9 @@
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { getImgComponent, getTTYMIName } from '@/utils';
 import styles from './Home.module.scss';
 import { EventType } from '@/types';
-import { getImgComponent } from '@/utils';
 
 // Gets 3 latest events from pocketbase. Also sorts them by date.
 const getEvents = async () => {
@@ -45,6 +46,7 @@ const EventCard = ({ event }: { event: EventType }) => {
 
 const HomePage = async () => {
   const events = await getEvents();
+
   return (
     <div className={styles.home}>
       <div className={styles.landing}>
@@ -55,8 +57,8 @@ const HomePage = async () => {
           </div>
           <div className={styles.landingContent__subtitle}>
             <p>
-              Tampereen Tonnikalan Ystävät Maistelemassa Imersiivisesti on Tampereella toimiva opiskelijakerho.
-              Manuaalista menoa jo vuodesta 2015!
+              {`${getTTYMIName()} on Tampereella toimiva opiskelijakerho.
+              Manuaalista menoa jo vuodesta 2015!`}
             </p>
           </div>
 

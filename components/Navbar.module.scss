@@ -30,7 +30,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 1.5rem;
+  margin-right: 2rem;
 
   &__link {
     color: $secondary-text-color;
@@ -40,6 +40,10 @@
     margin: 0 0.5rem;
     border-radius: 0.5rem;
     transition: all 0.2s ease-in-out;
+
+    p {
+      margin: 0.2rem;
+    }
 
     &:hover {
       background-color: $secondary-text-color;
