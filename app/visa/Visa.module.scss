@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.visa {
+  background: $backgroud-color;
+}
+
+.title__container {
+  display: flex;
+  flex-direction: row;
+}
