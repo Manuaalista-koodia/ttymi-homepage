@@ -6,7 +6,7 @@ import { EventType } from '@/types';
 
 const getEvents = async () => {
   try {
-    const res = await fetch('http://127.0.0.1:8090/api/collections/events/records?sort=-datetime', {
+    const res = await fetch('https://ttymi-homepage.pockethost.io/api/collections/events/records?sort=-datetime', {
       cache: 'no-store',
     });
     const data = await res.json();

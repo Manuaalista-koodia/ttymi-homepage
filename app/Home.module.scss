@@ -15,7 +15,7 @@
     padding: 8rem 15vw;
   }
   @media only screen and (max-width: 768px) {
-    padding: 4rem 10vw;
+    padding: 3rem 10vw;
   }
 
   &__image {
@@ -150,6 +150,10 @@
         border-left: 1.25rem solid $primary-color;
         margin-right: 0.5rem;
         margin-left: 0.25rem;
+
+        &:hover {
+          border-left: 1.25rem solid white;
+        }
       }
     }
   }
@@ -163,7 +167,7 @@
   box-shadow: $shadow;
 
   @media only screen and (max-width: 1300px) {
-    margin: 2rem 2rem;
+    margin: 2rem 1rem;
   }
 
   &__container {
@@ -228,7 +232,7 @@
       padding: 3rem 2rem;
     }
     @media only screen and (max-width: 768px) {
-      padding: 1rem;
+      padding: 2rem 1rem;
     }
   }
   &__title {
@@ -310,6 +314,10 @@
         border-left: 0.75rem solid $primary-color;
         margin-right: 0.5rem;
         margin-left: 0.25rem;
+
+        &:hover {
+          border-left: 0.75rem solid white;
+        }
       }
     }
   }

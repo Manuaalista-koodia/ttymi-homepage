@@ -8,7 +8,7 @@ import styles from './Event.module.scss';
 
 const getEvent = async (eventId: string) => {
   try {
-    const res = await fetch(`http://127.0.0.1:8090/api/collections/events/records/${eventId}`, {
+    const res = await fetch(`https://ttymi-homepage.pockethost.io/api/collections/events/records/${eventId}`, {
       next: { revalidate: 10 },
     });
     const data = await res.json();

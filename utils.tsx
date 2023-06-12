@@ -8,7 +8,12 @@ export const getImgComponent = (event: EventType) => {
   if (!event.image) {
     return <Image src={require('./public/placeholder.png')} alt={`${event.title}-image`} />;
   }
-  return <img src={`http://127.0.0.1:8090/api/files/events/${event.id}/${event.image}`} alt={`${event.title}-image`} />;
+  return (
+    <img
+      src={`https://ttymi-homepage.pockethost.io/api/files/events/${event.id}/${event.image}`}
+      alt={`${event.title}-image`}
+    />
+  );
 };
 
 export const getTTYMIName = (): string => {

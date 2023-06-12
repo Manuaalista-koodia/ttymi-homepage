@@ -14,6 +14,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <main style={{ flex: 1, marginTop: '3rem' }}>{children}</main>
         <Footer />
       </body>
+      <meta name='theme-color' content='#043e18' />
     </html>
   );
 };

@@ -8,9 +8,12 @@ import { EventType } from '@/types';
 // Gets 3 latest events from pocketbase. Also sorts them by date.
 const getEvents = async () => {
   try {
-    const res = await fetch('http://127.0.0.1:8090/api/collections/events/records?page=1&perPage=3&sort=-datetime', {
-      cache: 'no-store',
-    });
+    const res = await fetch(
+      'https://ttymi-homepage.pockethost.io/api/collections/events/records?page=1&perPage=3&sort=-datetime',
+      {
+        cache: 'no-store',
+      },
+    );
     const data = await res.json();
     return data?.items as EventType[];
   } catch (e) {
@@ -67,7 +70,7 @@ const HomePage = async () => {
             href='https://drive.google.com/file/d/1zLCdRl9WED5RuoAI4pxzqx-bT6y77trI/view'
             target='_blank'
           >
-            <div className={styles.landingContent__button__triangle}></div>
+            <div className={styles.landingContent__button__triangle} />
             <p className={styles.landingContent__button__text}>JÄSENEKSI?</p>
           </Link>
         </div>
