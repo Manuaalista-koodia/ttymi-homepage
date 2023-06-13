@@ -1,5 +1,18 @@
 @import '../styles/variables.scss';
 
+.loading {
+  svg polygon {
+    stroke-dasharray: 50;
+    animation: dashoffset 1.5s linear infinite;
+  }
+
+  @keyframes dashoffset {
+    to {
+      stroke-dashoffset: 100;
+    }
+  }
+}
+
 .loader,
 .loader:after {
   border-radius: 50%;

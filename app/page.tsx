@@ -48,7 +48,7 @@ const EventCard = ({ event }: { event: EventType }) => {
 };
 
 const HomePage = async () => {
-  const events = await getEvents();
+  const events: EventType[] = await getEvents();
 
   return (
     <div className={styles.home}>
