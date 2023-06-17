@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getImgComponent, getTTYMIName } from '@/utils';
@@ -44,6 +44,18 @@ const EventCard = ({ event }: { event: EventType }) => {
         <div className={styles.event__text}>{event.content}</div>
       </div>
     </Link>
+  );
+};
+
+const LoadingEvents = () => {
+  return (
+    <div>
+      <div className={styles.events__content}>
+        {[1, 2, 3].map(() => (
+          <>moi</>
+        ))}
+      </div>
+    </div>
   );
 };
 
@@ -99,20 +111,23 @@ const HomePage = async () => {
       <div className={styles.events}>
         <div className={styles.events__container}>
           <h1 className={styles.events__title}>TAPAHTUMAT</h1>
-          <div className={styles.events__content}>
-            {events.length > 0 ? (
-              events?.map((event) => {
-                return <EventCard key={`event-${event.id}`} event={event} />;
-              })
-            ) : (
-              <p>404 Tapahtumien haku epäonnistui...</p>
-            )}
-          </div>
 
-          <Link className={styles.events__button} href={'/events'}>
-            <div className={styles.events__button__triangle}></div>
-            <p className={styles.events__button__text}>LISÄÄ?</p>
-          </Link>
+          <Suspense fallback={<LoadingEvents />}>
+            <div className={styles.events__content}>
+              {events.length > 0 ? (
+                events?.map((event) => {
+                  return <EventCard key={`event-${event.id}`} event={event} />;
+                })
+              ) : (
+                <p>404 Tapahtumien haku epäonnistui...</p>
+              )}
+            </div>
+
+            <Link className={styles.events__button} href={'/events'}>
+              <div className={styles.events__button__triangle}></div>
+              <p className={styles.events__button__text}>LISÄÄ?</p>
+            </Link>
+          </Suspense>
         </div>
       </div>
     </div>
