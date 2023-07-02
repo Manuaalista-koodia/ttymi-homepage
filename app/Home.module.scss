@@ -324,12 +324,12 @@
 }
 
 .event {
-  margin: 2rem;
+  margin: 2rem 3rem;
   background-color: white;
   color: $text-color;
   border-radius: 1rem;
-  width: 32rem;
-  height: 42rem;
+  width: 30rem;
+  height: 40rem;
   overflow: hidden;
   box-shadow: $shadow;
   transition: all 0.15s ease-in-out;
@@ -398,8 +398,8 @@
 
   &__content {
     position: relative;
-    top: -8rem;
-    padding: 1.75rem;
+    top: -9rem;
+    padding: 1.5rem;
     background-color: white;
     border-radius: 1.5rem 1.5rem 0 0;
     //height: 100%;

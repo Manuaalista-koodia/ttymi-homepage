@@ -34,12 +34,7 @@ const Links = ({
         <p className={isMobile ? styles.links__mobile__text : ''}>TEEKKARIVISA</p>
       </Link> 
       */}
-      <Link
-        className={styles.links__link}
-        href='https://drive.google.com/file/d/1zLCdRl9WED5RuoAI4pxzqx-bT6y77trI/view'
-        target='_blank'
-        onClick={() => isMobile && setMenuOpen(false)}
-      >
+      <Link className={styles.links__link} href='/jaseneksi' onClick={() => isMobile && setMenuOpen(false)}>
         <p className={isMobile ? styles.links__mobile__text : ''}>JÄSENEKSI?</p>
       </Link>
 

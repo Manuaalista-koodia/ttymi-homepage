@@ -1,0 +1,142 @@
+@import '../../styles/variables.scss';
+
+.jaseneksi {
+  background-color: $primary-color;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__container {
+    background-color: white;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    padding: 4rem 8rem;
+    width: 80%;
+
+    margin-top: 25rem;
+    @media only screen and (max-width: 960px) {
+      margin-top: 3rem;
+    }
+
+    overflow-x: hidden;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media only screen and (max-width: 1300px) {
+      width: 80%;
+      padding: 4rem 4rem;
+    }
+    @media only screen and (max-width: 650px) {
+      padding: 2rem 2rem;
+    }
+  }
+  &__start {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+
+    @media only screen and (max-width: 1300px) {
+      margin-top: 0;
+    }
+  }
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+
+    @media only screen and (max-width: 960px) {
+      font-size: 2rem;
+    }
+    @media only screen and (max-width: 650px) {
+      font-size: 1.75rem;
+    }
+    @media only screen and (max-width: 500px) {
+      font-size: 1.5rem;
+    }
+  }
+  &__subtitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+
+    @media only screen and (max-width: 960px) {
+      font-size: 1.75rem;
+    }
+    @media only screen and (max-width: 650px) {
+      font-size: 1.5rem;
+    }
+    @media only screen and (max-width: 500px) {
+      font-size: 1.25rem;
+    }
+  }
+  &__text {
+    font-size: 1.75rem;
+    line-height: 1.5;
+    font-weight: 400;
+    max-width: 95%;
+
+    @media only screen and (max-width: 960px) {
+      font-size: 1.5rem;
+    }
+    @media only screen and (max-width: 650px) {
+      font-size: 1.25rem;
+    }
+    @media only screen and (max-width: 500px) {
+      font-size: 1rem;
+    }
+  }
+  &__link {
+    font-size: 1.75rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: 600;
+
+    @media only screen and (max-width: 960px) {
+      font-size: 1.5rem;
+    }
+    @media only screen and (max-width: 650px) {
+      font-size: 1.25rem;
+    }
+    @media only screen and (max-width: 500px) {
+      font-size: 1rem;
+    }
+  }
+  &__list {
+    list-style-position: outside;
+    padding-left: 1rem;
+    margin-right: 2rem;
+  }
+  &__img {
+    width: 25rem;
+    height: 25rem;
+    margin-right: 6rem;
+
+    @media only screen and (max-width: 1300px) {
+      visibility: hidden;
+      display: none;
+    }
+  }
+
+  .backgroundImg {
+    position: fixed;
+    top: -95rem;
+    left: 0;
+    width: 100%;
+
+    overflow: hidden;
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(0.75);
+  }
+}

@@ -77,11 +77,7 @@ const HomePage = async () => {
             </p>
           </div>
 
-          <Link
-            className={styles.landingContent__button}
-            href='https://drive.google.com/file/d/1zLCdRl9WED5RuoAI4pxzqx-bT6y77trI/view'
-            target='_blank'
-          >
+          <Link className={styles.landingContent__button} href={'/jaseneksi'}>
             <div className={styles.landingContent__button__triangle} />
             <p className={styles.landingContent__button__text}>JÄSENEKSI?</p>
           </Link>
