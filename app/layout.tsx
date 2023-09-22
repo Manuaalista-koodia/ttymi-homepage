@@ -1,9 +1,11 @@
 'use client';
 import { Analytics } from '@vercel/analytics/react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
+
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import '../styles/global.scss';
+
+import '../styles/global.css';
 import favicon from '../public/favicon.ico';
 
 const generateMetaData = (path: string) => {

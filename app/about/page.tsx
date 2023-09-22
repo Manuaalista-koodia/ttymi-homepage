@@ -14,7 +14,13 @@ const Carousel = () => {
           <Image className={styles.embla__img} src={require('../../public/IMG_1558.jpg')} alt='1' />
         </div>
         <div className={styles.embla__slide}>
-          <Image className={styles.embla__img} src={require('../../public/IMG_6150.jpg')} alt='1' />
+          <Image className={styles.embla__img} src={require('../../public/mansikkapojat.jpg')} alt='3' />
+        </div>
+        <div className={styles.embla__slide}>
+          <Image className={styles.embla__img} src={require('../../public/IMG_8503.jpg')} alt='3' />
+        </div>
+        <div className={styles.embla__slide}>
+          <Image className={styles.embla__img} src={require('../../public/IMG_6150.jpg')} alt='2' />
         </div>
       </div>
     </div>
