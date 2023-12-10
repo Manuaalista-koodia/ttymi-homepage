@@ -5,25 +5,25 @@
 
   overflow-x: hidden;
   margin: 0;
-  padding: 1rem;
+
   min-height: 78vh;
 
   &__landing {
     position: relative;
     z-index: 5;
-    margin: 15rem 10rem;
+    margin: 12rem 10rem;
     width: 45rem;
 
     @media only screen and (max-width: 1300px) {
-      margin: 15rem 5rem;
+      margin: 12rem 5rem;
       width: 35rem;
     }
     @media only screen and (max-width: 768px) {
-      margin: 12rem 2rem;
+      margin: 8rem 2rem;
       width: 25rem;
     }
     @media only screen and (max-width: 540px) {
-      margin: 9rem 1rem;
+      margin: 6rem 1rem;
       width: 20rem;
     }
   }
@@ -53,21 +53,41 @@
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
     padding: 3rem 6rem;
-    height: 40rem;
+
     width: 80%;
     overflow-x: hidden;
     position: relative;
     z-index: 10;
   }
 
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   .backgroundImg {
     position: absolute;
     left: 0;
-    top: -20rem;
+    //top: -20rem;
     width: 100%;
     height: auto;
     overflow: hidden;
     z-index: 1;
     object-fit: cover;
+  }
+}
+
+.stat {
+  width: 100%;
+  background-color: #e6e6e6;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
   }
 }

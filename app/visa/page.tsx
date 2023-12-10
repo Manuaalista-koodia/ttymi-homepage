@@ -37,14 +37,20 @@ const VisaPage = async () => {
                 return <div key={i}>{s.season}</div>;
               }) */}
               <p>{seasons[0].season}</p>
-              {seasons[0].stats.map((stats, i) => {
-                return (
-                  <div key={i}>
-                    <p>{stats.Joukkue}</p>
-                    <p>{stats.Kokonaispisteet}p</p>
-                  </div>
-                );
-              })}
+              <div className={styles.visa__stats}>
+                {seasons[0].stats.map((stats, i) => {
+                  return (
+                    <details className={styles.stat} key={i}>
+                      <summary className={styles.stat__container}>
+                        <p>{stats.Joukkue}</p>
+                        <p>{stats.Kokonaispisteet}p</p>
+                      </summary>
+                      <p>syksyn eka</p>
+                      <p>syksyn toka</p>
+                    </details>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
