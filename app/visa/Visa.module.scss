@@ -2,20 +2,72 @@
 
 .visa {
   background: $backgroud-color;
-  color: white;
 
+  overflow-x: hidden;
   margin: 0;
   padding: 1rem;
   min-height: 78vh;
-}
 
-.title {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin: 0 0 4rem 0;
-}
-.title__container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  &__landing {
+    position: relative;
+    z-index: 5;
+    margin: 15rem 10rem;
+    width: 45rem;
+
+    @media only screen and (max-width: 1300px) {
+      margin: 15rem 5rem;
+      width: 35rem;
+    }
+    @media only screen and (max-width: 768px) {
+      margin: 12rem 2rem;
+      width: 25rem;
+    }
+    @media only screen and (max-width: 540px) {
+      margin: 9rem 1rem;
+      width: 20rem;
+    }
+  }
+
+  &__title {
+    color: $secondary-text-color;
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    text-shadow: 2px 2px 5px #000000;
+
+    @media only screen and (max-width: 1300px) {
+      font-size: 2rem;
+    }
+    @media only screen and (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__box {
+    background-color: white;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    padding: 3rem 6rem;
+    height: 40rem;
+    width: 80%;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 10;
+  }
+
+  .backgroundImg {
+    position: absolute;
+    left: 0;
+    top: -20rem;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    z-index: 1;
+    object-fit: cover;
+  }
 }

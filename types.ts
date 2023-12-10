@@ -5,3 +5,14 @@ export type EventType = {
   image: any;
   datetime: string;
 };
+
+export type StatsType = {
+  Joukkue: string;
+  Kokonaispisteet: number;
+};
+
+export type SeasonType = {
+  id: string;
+  season: string;
+  stats: StatsType[];
+};
