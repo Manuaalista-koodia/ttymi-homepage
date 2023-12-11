@@ -50,22 +50,29 @@ const VisaPage = () => {
             <div className={styles.visa__info}>
               {seasons.length && (
                 <>
-                  <select onChange={(e) => handleSeasonChange(e)}>
-                    {seasons.map((season, i) => {
-                      return (
-                        <option key={i} value={season.season}>
-                          {season.season}
-                        </option>
-                      );
-                    })}
-                  </select>
+                  <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
+                    <h1>KAUSI</h1>{' '}
+                    <select onChange={(e) => handleSeasonChange(e)}>
+                      {seasons.map((season, i) => {
+                        return (
+                          <option key={i} value={season.season}>
+                            {season.season}
+                          </option>
+                        );
+                      })}
+                    </select>
+                  </div>
+
                   <div className={styles.visa__stats}>
                     {seasons[selectedSeason] !== undefined &&
                       seasons[selectedSeason].stats.map((stats: StatsType, i) => {
                         return (
                           <details className={styles.stat} key={i}>
                             <summary className={styles.stat__container}>
-                              <p>{stats.Joukkue}</p>
+                              <div style={{ display: 'flex', gap: '2rem' }}>
+                                <p>{`${i + 1}.`}</p>
+                                <p>{stats.Joukkue}</p>
+                              </div>
                               <p>{stats.Kokonaispisteet}p</p>
                             </summary>
                             <p>syksyn eka</p>
