@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import styles from './Visa.module.scss';
 import { SeasonType, StatsType } from '@/types';
@@ -6,9 +7,12 @@ import { SeasonType, StatsType } from '@/types';
 const getSeasons = async () => {
   try {
     console.log('getting stats...');
-    const res = await fetch('https://ttymi-homepage.pockethost.io/api/collections/quiz_stats/records', {
-      cache: 'no-store',
-    });
+    const res = await fetch(
+      'https://ttymi-homepage.pockethost.io/api/collections/quiz_stats/records?sort=-season_start_date',
+      {
+        cache: 'no-store',
+      },
+    );
     const data = await res.json();
     return data?.items as SeasonType[];
   } catch (e) {
@@ -17,9 +21,20 @@ const getSeasons = async () => {
   }
 };
 
-const VisaPage = async () => {
-  const seasons = await getSeasons();
-  console.log(seasons);
+const VisaPage = () => {
+  const [seasons, seasonsSet] = React.useState<SeasonType[]>([]); // [[], setSeasons]
+  const [selectedSeason, setSelectedSeason] = React.useState(0); // [0, setSeason]
+
+  useEffect(() => {
+    getSeasons().then((seasons) => {
+      //selectedSeasonSet(seasons.length - 1);
+      seasonsSet(seasons);
+    });
+  }, []);
+
+  const handleSeasonChange = (e: any) => {
+    setSelectedSeason(seasons.findIndex((season) => season.season === e.target.value));
+  };
 
   return (
     <div className={styles.visa}>
@@ -33,24 +48,34 @@ const VisaPage = async () => {
         <div className={styles.visa__box}>
           <div className={styles.visa__content}>
             <div className={styles.visa__info}>
-              {/* seasons.map((s, i) => {
-                return <div key={i}>{s.season}</div>;
-              }) */}
-              <p>{seasons[0].season}</p>
-              <div className={styles.visa__stats}>
-                {seasons[0].stats.map((stats, i) => {
-                  return (
-                    <details className={styles.stat} key={i}>
-                      <summary className={styles.stat__container}>
-                        <p>{stats.Joukkue}</p>
-                        <p>{stats.Kokonaispisteet}p</p>
-                      </summary>
-                      <p>syksyn eka</p>
-                      <p>syksyn toka</p>
-                    </details>
-                  );
-                })}
-              </div>
+              {seasons.length && (
+                <>
+                  <select onChange={(e) => handleSeasonChange(e)}>
+                    {seasons.map((season, i) => {
+                      return (
+                        <option key={i} value={season.season}>
+                          {season.season}
+                        </option>
+                      );
+                    })}
+                  </select>
+                  <div className={styles.visa__stats}>
+                    {seasons[selectedSeason] !== undefined &&
+                      seasons[selectedSeason].stats.map((stats: StatsType, i) => {
+                        return (
+                          <details className={styles.stat} key={i}>
+                            <summary className={styles.stat__container}>
+                              <p>{stats.Joukkue}</p>
+                              <p>{stats.Kokonaispisteet}p</p>
+                            </summary>
+                            <p>syksyn eka</p>
+                            <p>syksyn toka</p>
+                          </details>
+                        );
+                      })}
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>

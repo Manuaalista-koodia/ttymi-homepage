@@ -15,4 +15,5 @@ export type SeasonType = {
   id: string;
   season: string;
   stats: StatsType[];
+  season_start_date: string;
 };
