@@ -4,6 +4,9 @@ import Image from 'next/image';
 import styles from './Visa.module.scss';
 import { SeasonType, StatsType } from '@/types';
 
+// Some "purkkakoodi" for displayin the stats per quiz
+const quizNames = ['eka', 'toka', 'kolmas', 'neljäs', 'viides', 'vika'];
+
 const getSeasons = async () => {
   try {
     console.log('getting stats...');
@@ -22,12 +25,11 @@ const getSeasons = async () => {
 };
 
 const VisaPage = () => {
-  const [seasons, seasonsSet] = React.useState<SeasonType[]>([]); // [[], setSeasons]
-  const [selectedSeason, setSelectedSeason] = React.useState(0); // [0, setSeason]
+  const [seasons, seasonsSet] = React.useState<SeasonType[]>([]);
+  const [selectedSeason, setSelectedSeason] = React.useState(0);
 
   useEffect(() => {
     getSeasons().then((seasons) => {
-      //selectedSeasonSet(seasons.length - 1);
       seasonsSet(seasons);
     });
   }, []);
@@ -51,7 +53,7 @@ const VisaPage = () => {
               {seasons.length && (
                 <>
                   <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
-                    <h1>KAUSI</h1>{' '}
+                    <h1>KAUSI</h1>
                     <select onChange={(e) => handleSeasonChange(e)}>
                       {seasons.map((season, i) => {
                         return (
@@ -75,8 +77,16 @@ const VisaPage = () => {
                               </div>
                               <p>{stats.Kokonaispisteet}p</p>
                             </summary>
-                            <p>syksyn eka</p>
-                            <p>syksyn toka</p>
+                            <div>
+                              {quizNames.map((quizName, i) => {
+                                if (stats[quizName] === undefined || stats[quizName] === '') return null;
+                                return (
+                                  <div key={i} style={{ marginLeft: '3rem' }}>
+                                    <p>{`${seasons[selectedSeason].season_prefix} ${quizName}: ${stats[quizName]}p`}</p>
+                                  </div>
+                                );
+                              })}
+                            </div>
                           </details>
                         );
                       })}
