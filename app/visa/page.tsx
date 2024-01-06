@@ -52,9 +52,9 @@ const VisaPage = () => {
             <div className={styles.visa__info}>
               {seasons.length && (
                 <>
-                  <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
+                  <div className={styles.heading}>
                     <h1>KAUSI</h1>
-                    <select onChange={(e) => handleSeasonChange(e)}>
+                    <select className={styles.select} onChange={(e) => handleSeasonChange(e)}>
                       {seasons.map((season, i) => {
                         return (
                           <option key={i} value={season.season}>
@@ -65,19 +65,43 @@ const VisaPage = () => {
                     </select>
                   </div>
 
+                  <div className={styles.visa__headings}>
+                    <div style={{ display: 'flex', gap: '2rem' }}>
+                      <p>#</p>
+                      <p>Joukkue</p>
+                    </div>
+                    <p>Pisteet</p>
+                  </div>
                   <div className={styles.visa__stats}>
                     {seasons[selectedSeason] !== undefined &&
                       seasons[selectedSeason].stats.map((stats: StatsType, i) => {
                         return (
                           <details className={styles.stat} key={i}>
                             <summary className={styles.stat__container}>
-                              <div style={{ display: 'flex', gap: '2rem' }}>
+                              <div
+                                style={{
+                                  display: 'flex',
+                                  gap: '2rem',
+                                  marginRight: '2rem',
+                                }}
+                              >
                                 <p>{`${i + 1}.`}</p>
-                                <p>{stats.Joukkue}</p>
+                                <p
+                                  style={{
+                                    overflow: 'break-word',
+                                    wordWrap: 'break-word',
+                                    wordBreak: 'break-word',
+                                    hyphens: 'auto',
+                                    whiteSpace: 'pre-wrap',
+                                  }}
+                                >
+                                  {stats.Joukkue}
+                                </p>
                               </div>
                               <p>{stats.Kokonaispisteet}p</p>
                             </summary>
                             <div>
+                              <hr style={{ width: '100%', opacity: 0.25 }} />
                               {quizNames.map((quizName, i) => {
                                 if (stats[quizName] === undefined || stats[quizName] === '') return null;
                                 return (
