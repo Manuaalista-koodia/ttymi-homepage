@@ -29,11 +29,9 @@ const Links = ({
       <Link className={styles.links__link} href='/events' onClick={() => isMobile && setMenuOpen(false)}>
         <p className={isMobile ? styles.links__mobile__text : ''}>TAPAHTUMAT</p>
       </Link>
-      {/* 
       <Link className={styles.links__link} href='/visa' onClick={() => isMobile && setMenuOpen(false)}>
         <p className={isMobile ? styles.links__mobile__text : ''}>TEEKKARIVISA</p>
-      </Link> 
-      */}
+      </Link>
       <Link className={styles.links__link} href='/jaseneksi' onClick={() => isMobile && setMenuOpen(false)}>
         <p className={isMobile ? styles.links__mobile__text : ''}>JÄSENEKSI?</p>
       </Link>

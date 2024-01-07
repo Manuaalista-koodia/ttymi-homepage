@@ -115,6 +115,64 @@
       }
     }
 
+    &__button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: white;
+      background-color: #0a7a2f;
+      border-radius: 1rem;
+      border: 2px solid transparent;
+      padding: 0rem 1.5rem;
+      box-shadow: $shadow;
+      cursor: pointer;
+      width: fit-content;
+      transition: all 0.15s ease-in-out;
+
+      &__text {
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 0.025rem;
+        margin: 1.25rem 0.5rem;
+      }
+      &__triangle {
+        width: 0;
+        height: 0;
+        border-top: 1rem solid transparent;
+        border-bottom: 1rem solid transparent;
+        border-left: 1.5rem solid white;
+        margin-right: 0.75rem;
+        margin-left: 0.5rem;
+      }
+
+      &:hover {
+        background-color: $primary-color;
+        color: white;
+        .landingContent__button__triangle {
+          transition: all 0.15s ease-in-out;
+          border-left: 1.5rem solid white;
+        }
+      }
+
+      @media only screen and (max-width: 768px) {
+        padding: 0rem 1rem;
+        &__text {
+          font-size: 1rem;
+        }
+        &__triangle {
+          border-top: 0.75rem solid transparent;
+          border-bottom: 0.75rem solid transparent;
+          border-left: 1.25rem solid white;
+          margin-right: 0.5rem;
+          margin-left: 0.25rem;
+
+          &:hover {
+            border-left: 1.25rem solid white;
+          }
+        }
+      }
+    }
+
     &__imgRight {
       margin-left: 4rem;
       margin-top: 5rem;
