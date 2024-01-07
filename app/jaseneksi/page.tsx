@@ -11,9 +11,9 @@ const JaseneksiPage = () => {
           <div className={styles.jaseneksi__start__text}>
             <h1 className={styles.jaseneksi__title}>JÄSENEKSI?</h1>
             <p className={styles.jaseneksi__text}>
-              Haluaisitko sinä päästä tekemään visoja ja muita tapahtumia hyvällä porukalla? Jos vastaus on kyllä, voit
-              hakea kerhomme jäsenyyttä hakulomakkeen kautta! Hakulomakkeen ja jäsenkriteerimme löydät alta. Valitsemme
-              uusia jäseniä 1-3 kertaa vuodessa 1-4 henkilöä kerrallaan.
+              Haluaisitko päästä mukaan tekemään visoja ja muita tapahtumia hyvällä porukalla? Jos vastaus on kyllä,
+              voit hakea kerhomme jäsenyyttä hakulomakkeen kautta! Hakulomakkeen ja jäsenkriteerimme löydät alta.
+              Valitsemme uusia jäseniä 1-3 kertaa vuodessa 1-4 henkilöä kerrallaan.
             </p>
           </div>
         </div>
@@ -37,6 +37,13 @@ const JaseneksiPage = () => {
             <li className={styles.jaseneksi__text}>Graafinen ja muu visuaalinen osaaminen</li>
             <li className={styles.jaseneksi__text}>Olet kiinnostunut esiintymisestä</li>
           </ul>
+
+          <p className={styles.jaseneksi__text}>
+            Näiden kriteerien lisäksi kahden yhdistyksen jäsenen tulee kannattaa hakemusta ja se vaatii myös jäsenistön
+            yksimielisen päätöksen. Olemme sinuun yhteyksissä ainoastaan siinä tapauksessa, että etenet
+            jäsenprosessisamme eteenpäin. Säilytämme lomakkeeseen jätettyjä vastauksia 12 kuukauden ajan, jonka jälkeen
+            ne poistetaan.
+          </p>
 
           <h3 className={styles.jaseneksi__subtitle}>Hakulomake (auki 24/7/365)</h3>
           <p className={styles.jaseneksi__text}>

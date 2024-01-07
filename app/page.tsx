@@ -88,18 +88,27 @@ const HomePage = async () => {
 
       <div className={styles.infoBubble}>
         <div className={styles.infoBubble__container}>
-          <Image className={styles.infoBubble__image} src={require('../public/logo-bg.png')} alt='logo-bg' />
+          <Image className={styles.infoBubble__image} src={require('../public/logo.png')} alt='logo-bg' />
 
           <div className={styles.infoBubble__content}>
             <h1 className={styles.infoBubble__title}>MIKÄ IHMEEN TTYMI?</h1>
             <p className={styles.infoBubble__text}>
-              TTYMI ry on Hervannasta lähtöinen opiskelijakerho. TTYMI on mukana tekemässä Tamperelaista
+              TTYMI ry on Hervannasta lähtöisin oleva opiskelijakerho. TTYMI on mukana tekemässä Tamperelaista
               opiskelijayhteisöä mm. järjestämällä erilaisia tapahtumia. Ydintoimintaamme onkin kaikille avoimien
               Teekkarivisan järjestäminen. TTYMI osallistuu ahkerasti myös ylioppilaskunnan ja teekkariyhdistyksen
               tapahtumiin, kuten erilaisiin rastikierroksiin ja tietenkin Wappuun! Jäsenemme voit tunnistaa vihreistä
               liiveistä ja manuaalisesta menosta.
             </p>
-            <p className={styles.infoBubble__text}>Voit seurata toimintaamme parhaiten Instagramista!</p>
+            <p className={styles.infoBubble__text}>
+              Voit seurata toimintaamme parhaiten{' '}
+              <Link
+                href='https://www.instagram.com/ttymi_ry/'
+                target='_blank'
+                style={{ color: '#0a7a2f', fontWeight: 'bold', textDecoration: 'underline' }}
+              >
+                Instagramista!
+              </Link>
+            </p>
           </div>
         </div>
       </div>

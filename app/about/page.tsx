@@ -57,10 +57,10 @@ const AboutPage = () => {
             <div className={styles.about__info}>
               <h1 className={styles.about__content__title}>TEEKKARIVISAT</h1>
               <p className={styles.about__content__text}>
-                Teekkarivisa on TTYMIn perinteinen noin periodeittain järjestettävät pubivisa/tietokilpailu
+                Teekkarivisa on TTYMIn perinteinen noin kuukausittain järjestettävät pubivisa/tietokilpailu
                 Teekkari-twistillä! Teekkarivisaan voi osallistua yksin tai parhaan kokemuksen takaamiseksi 3-5 henkilön
                 joukkueella. Teekkarivisaan osallistuminen on ilmaista ja kaikille avointa. Teekkarivisojen ajankohdista
-                tiedotetaan TTYMIn someissa.
+                tiedotetaan TTYMIn someissa sekä muissa tiedotuskanavissa.
               </p>
               {/*<p className={styles.about__content__text}>Teekkarivisojen ajankohdista tiedotetaan TTYMIn someissa.</p>*/}
               <Link className={styles.about__content__button} href={'/visa'}>
