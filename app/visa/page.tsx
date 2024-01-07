@@ -108,7 +108,8 @@ const VisaPage = () => {
                             <div>
                               <hr style={{ width: '100%', opacity: 0.25 }} />
                               {quizNames.map((quizName, i) => {
-                                if (stats[quizName] === undefined || stats[quizName] === '') return null;
+                                if (stats[quizName] === undefined || stats[quizName] === '' || stats[quizName] === '-')
+                                  return null;
                                 return (
                                   <div key={i} style={{ marginLeft: '3rem' }}>
                                     <p>{`${seasons[selectedSeason].season_prefix} ${quizName}: ${stats[quizName]}p`}</p>
