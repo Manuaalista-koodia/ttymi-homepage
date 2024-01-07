@@ -11,7 +11,7 @@
   &__landing {
     position: relative;
     z-index: 5;
-    margin: 12rem 10rem;
+    margin: 14rem 10rem;
     width: 45rem;
 
     @media only screen and (max-width: 1300px) {
@@ -23,23 +23,41 @@
       width: 25rem;
     }
     @media only screen and (max-width: 540px) {
-      margin: 6rem 1rem;
+      margin: 5rem 1rem;
       width: 20rem;
     }
   }
 
   &__title {
     color: $secondary-text-color;
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 600;
     letter-spacing: 0.1rem;
     text-shadow: 2px 2px 5px #000000;
 
     @media only screen and (max-width: 1300px) {
-      font-size: 2rem;
+      font-size: 3rem;
     }
     @media only screen and (max-width: 768px) {
-      font-size: 1.5rem;
+      font-size: 2rem;
+    }
+  }
+
+  .backgroundImg {
+    position: absolute;
+    left: 0;
+    top: -10rem;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    z-index: 1;
+    object-fit: cover;
+
+    @media only screen and (max-width: 1300px) {
+      top: -5rem;
+    }
+    @media only screen and (max-width: 768px) {
+      top: 0;
     }
   }
 
@@ -58,6 +76,39 @@
     overflow-x: hidden;
     position: relative;
     z-index: 10;
+  }
+
+  &__content {
+    min-height: 40vh;
+  }
+
+  &__loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-height: 40vh;
+
+    &__loader {
+      width: 48px;
+      height: 48px;
+      border: 5px solid #0a7a2f;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
   }
 
   &__stats {
@@ -79,17 +130,6 @@
     @media only screen and (max-width: 1300px) {
       padding-right: 0.5rem;
     }
-  }
-
-  .backgroundImg {
-    position: absolute;
-    left: 0;
-    //top: -20rem;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    z-index: 1;
-    object-fit: cover;
   }
 }
 

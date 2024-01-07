@@ -9,7 +9,7 @@ const quizNames = ['eka', 'toka', 'kolmas', 'neljäs', 'viides', 'vika'];
 
 const getSeasons = async () => {
   try {
-    console.log('getting stats...');
+    console.log('getting visa-stats...');
     const res = await fetch(
       'https://ttymi-homepage.pockethost.io/api/collections/quiz_stats/records?sort=-season_start_date',
       {
@@ -25,16 +25,21 @@ const getSeasons = async () => {
 };
 
 const VisaPage = () => {
-  const [seasons, seasonsSet] = React.useState<SeasonType[]>([]);
+  const [seasons, seasonsSet] = React.useState<SeasonType[] | null>(null);
   const [selectedSeason, setSelectedSeason] = React.useState(0);
 
   useEffect(() => {
-    getSeasons().then((seasons) => {
-      seasonsSet(seasons);
-    });
+    getSeasons()
+      .then((seasons) => {
+        seasonsSet(seasons);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   }, []);
 
   const handleSeasonChange = (e: any) => {
+    if (seasons === null) return;
     setSelectedSeason(seasons.findIndex((season) => season.season === e.target.value));
   };
 
@@ -50,7 +55,7 @@ const VisaPage = () => {
         <div className={styles.visa__box}>
           <div className={styles.visa__content}>
             <div className={styles.visa__info}>
-              {seasons.length && (
+              {seasons ? (
                 <>
                   <div className={styles.heading}>
                     <h1>KAUSI</h1>
@@ -116,6 +121,10 @@ const VisaPage = () => {
                       })}
                   </div>
                 </>
+              ) : (
+                <div className={styles.visa__loading}>
+                  <span className={styles.visa__loading__loader}></span>
+                </div>
               )}
             </div>
           </div>

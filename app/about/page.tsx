@@ -3,6 +3,7 @@ import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import styles from './About.module.scss';
+import Link from 'next/link';
 
 const Carousel = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
@@ -54,13 +55,18 @@ const AboutPage = () => {
 
           <div className={styles.about__content__second}>
             <div className={styles.about__info}>
-              <h1 className={styles.about__content__title}>TEEKKARIVISA</h1>
+              <h1 className={styles.about__content__title}>TEEKKARIVISAT</h1>
               <p className={styles.about__content__text}>
                 Teekkarivisa on TTYMIn perinteinen noin periodeittain järjestettävät pubivisa/tietokilpailu
                 Teekkari-twistillä! Teekkarivisaan voi osallistua yksin tai parhaan kokemuksen takaamiseksi 3-5 henkilön
-                joukkueella. Teekkarivisaan osallistuminen on ilmaista ja kaikille avointa.
+                joukkueella. Teekkarivisaan osallistuminen on ilmaista ja kaikille avointa. Teekkarivisojen ajankohdista
+                tiedotetaan TTYMIn someissa.
               </p>
-              <p className={styles.about__content__text}>Teekkarivisojen ajankohdista tiedotetaan TTYMIn someissa.</p>
+              {/*<p className={styles.about__content__text}>Teekkarivisojen ajankohdista tiedotetaan TTYMIn someissa.</p>*/}
+              <Link className={styles.about__content__button} href={'/visa'}>
+                <div className={styles.about__content__button__triangle} />
+                <p className={styles.about__content__button__text}>TILASTOT</p>
+              </Link>
             </div>
             <Image className={styles.about__content__imgLeft} src={require('../../public/visa.png')} alt='visa' />
           </div>

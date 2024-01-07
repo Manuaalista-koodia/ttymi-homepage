@@ -11,6 +11,7 @@ import favicon from '../public/favicon.ico';
 const generateMetaData = (path: string) => {
   if (path.includes('event')) return 'TTYMI - Tapahtumat';
   if (path.includes('visa')) return 'TTYMI - Teekkarivisa';
+  if (path.includes('jaseneksi')) return 'TTYMI - Jäseneksi';
   if (path.includes('about')) return 'TTYMI - Tietoa';
   if (path.includes('contacts')) return 'TTYMI - Yhteystiedot';
   else return 'TTYMI';
