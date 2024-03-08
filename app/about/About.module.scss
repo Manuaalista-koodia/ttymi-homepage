@@ -24,6 +24,10 @@
       width: 20rem;
     }
   }
+  &__title_container {
+    display: flex;
+    flex-direction: row;
+  }
   &__title {
     color: $secondary-text-color;
     font-size: 3.5rem;

@@ -128,6 +128,29 @@
     }
   }
 
+  &__bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  &__bottom_logo {
+    width: 8rem;
+    height: 8rem;
+
+    @media only screen and (max-width: 960px) {
+      width: 6rem;
+      height: 6rem;
+    }
+    @media only screen and (max-width: 650px) {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+
   .backgroundImg {
     position: fixed;
     top: -95rem;

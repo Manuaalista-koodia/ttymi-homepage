@@ -55,14 +55,25 @@ const AboutPage = () => {
 
           <div className={styles.about__content__second}>
             <div className={styles.about__info}>
-              <h1 className={styles.about__content__title}>TEEKKARIVISAT</h1>
+              <div className={styles.about__title_container}>
+                <h1 className={styles.about__content__title}>TEEKKARIVISAT</h1>
+              </div>
               <p className={styles.about__content__text}>
                 Teekkarivisa on TTYMIn perinteinen noin kuukausittain järjestettävät pubivisa/tietokilpailu
-                Teekkari-twistillä! Teekkarivisaan voi osallistua yksin tai parhaan kokemuksen takaamiseksi 3-5 henkilön
+                Teekkari-twistillä! Teekkarivisaan voi osallistua yksin tai parhaan kokemuksen takaamiseksi 4 henkilön
                 joukkueella. Teekkarivisaan osallistuminen on ilmaista ja kaikille avointa. Teekkarivisojen ajankohdista
                 tiedotetaan TTYMIn someissa sekä muissa tiedotuskanavissa.
               </p>
               {/*<p className={styles.about__content__text}>Teekkarivisojen ajankohdista tiedotetaan TTYMIn someissa.</p>*/}
+
+              <p className={styles.about__content__text}>
+                Haluatko Teekkarivisan myös omaan tapahtumaasi? TTYMI tekee myös visoja räätälöitynä sinun
+                tapahtumakonseptiin! Pyydä tarjous osoitteessa{' '}
+                <span style={{ color: '#0a7a2f', fontWeight: 'bold', textDecoration: 'underline' }}>
+                  ttymi@lists.tuni.fi
+                </span>
+                {` `}tai vedä TTYMIläistä <del>hihasta</del> liivistä.
+              </p>
               <Link className={styles.about__content__button} href={'/visa'}>
                 <div className={styles.about__content__button__triangle} />
                 <p className={styles.about__content__button__text}>TILASTOT</p>

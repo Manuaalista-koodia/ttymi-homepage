@@ -59,6 +59,10 @@ const JaseneksiPage = () => {
             Haluatko lisätietoa toiminnastamme tai jäikö jokin mietityttämään? Voit kysyä lisätietoa Telegramissa
             laittamalla viestiä @Mihef tai laittamalla mailia ttymi@lists.tuni.fi.
           </p>
+
+          <div className={styles.jaseneksi__bottom}>
+            <Image className={styles.jaseneksi__bottom_logo} src={require('../../public/logo.png')} alt='ttymi-logo' />
+          </div>
         </div>
       </div>
     </div>
