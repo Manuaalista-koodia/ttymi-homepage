@@ -28,9 +28,9 @@ const EventPage = async ({ params }: any) => {
   return (
     <div className={styles.event}>
       <div className={styles.event__container}>
-        {/*<div className={styles.event__back} onClick={() => router.back()}>
+        <div className={styles.event__back} onClick={() => router.back()}>
           <Image className={styles.event__back__icon} src={require('../../../public/arrow-left.png')} alt='calendar' />
-        </div>*/}
+        </div>
         <div className={styles.event__image}>{getImgComponent(event)}</div>
         <div className={styles.event__content}>
           <h1 className={styles.event__title}>{event?.title}</h1>

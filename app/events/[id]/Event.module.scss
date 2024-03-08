@@ -8,12 +8,11 @@
     min-height: 100%;
 
     @media only screen and (max-width: 1300px) {
-      margin-top: 2rem;
+      margin-top: 8rem;
       flex-direction: column;
-      align-items: center;
     }
     @media only screen and (max-width: 768px) {
-      margin-top: 2rem;
+      margin-top: 4rem;
     }
   }
   &__image {
