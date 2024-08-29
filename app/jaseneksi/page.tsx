@@ -57,7 +57,7 @@ const JaseneksiPage = () => {
           <h3 className={styles.jaseneksi__subtitle}>Lisätietoa</h3>
           <p className={styles.jaseneksi__text}>
             Haluatko lisätietoa toiminnastamme tai jäikö jokin mietityttämään? Voit kysyä lisätietoa Telegramissa
-            laittamalla viestiä @Mihef tai laittamalla mailia ttymi@lists.tuni.fi.
+            laittamalla viestiä @uimakoulu tai laittamalla mailia ttymi@lists.tuni.fi.
           </p>
 
           <div className={styles.jaseneksi__bottom}>
