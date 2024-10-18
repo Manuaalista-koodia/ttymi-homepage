@@ -12,16 +12,19 @@ const Carousel = () => {
     <div className={styles.embla} ref={emblaRef}>
       <div className={styles.embla__container}>
         <div className={styles.embla__slide}>
-          <Image className={styles.embla__img} src={require('../../public/IMG_1558.jpg')} alt='1' />
+          <Image className={styles.embla__img} src={require('../../public/mansikkapojat.jpg')} alt='1' />
         </div>
         <div className={styles.embla__slide}>
-          <Image className={styles.embla__img} src={require('../../public/mansikkapojat.jpg')} alt='3' />
+          <Image className={styles.embla__img} src={require('../../public/IMG_1558.jpg')} alt='2' />
         </div>
         <div className={styles.embla__slide}>
           <Image className={styles.embla__img} src={require('../../public/IMG_8503.jpg')} alt='3' />
         </div>
         <div className={styles.embla__slide}>
-          <Image className={styles.embla__img} src={require('../../public/IMG_6150.jpg')} alt='2' />
+          <Image className={styles.embla__img} src={require('../../public/IMG_6150.jpg')} alt='4' />
+        </div>
+        <div className={styles.embla__slide}>
+          <Image className={styles.embla__img} src={require('../../public/grilli.jpg')} alt='5' />
         </div>
       </div>
     </div>
