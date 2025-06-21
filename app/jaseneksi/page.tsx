@@ -49,8 +49,8 @@ const JaseneksiPage = () => {
           <p className={styles.jaseneksi__text}>
             Voit jättää hakemuksen tämän lomakkeen kautta (vaatii kirjautumisen Google-tilillä):
             <br />
-            <a className={styles.jaseneksi__link} href='https://forms.gle/RNkW7JZ2goMBxRLJ8' target='_blank'>
-              https://forms.gle/RNkW7JZ2goMBxRLJ8
+            <a className={styles.jaseneksi__link} href='https://forms.gle/Ab45ow4vi2DArmCa6' target='_blank'>
+              https://forms.gle/Ab45ow4vi2DArmCa6
             </a>
           </p>
 
