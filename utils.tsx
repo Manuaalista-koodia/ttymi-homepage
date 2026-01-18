@@ -48,13 +48,30 @@ const NAMES = [
 
 // Returns either placeholder image or image from pocketbase
 export const getImgComponent = (event: EventType) => {
+  const commonProps = {
+    alt: `${event.title}-image`,
+    className: 'h-full w-full object-cover block',
+    style: { objectFit: 'cover' as const },
+  };
+
   if (!event.image) {
-    return <Image src={require('./public/placeholder.png')} alt={`${event.title}-image`} />;
+    return (
+      <Image
+        src='/placeholder.png'
+        alt={commonProps.alt}
+        className={commonProps.className}
+        width={500}
+        height={500}
+        style={commonProps.style}
+      />
+    );
   }
   return (
     <img
       src={`https://ttymi-homepage.pockethost.io/api/files/events/${event.id}/${event.image}`}
-      alt={`${event.title}-image`}
+      alt={commonProps.alt}
+      className={commonProps.className}
+      style={commonProps.style}
     />
   );
 };

@@ -1,27 +1,19 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import styles from './Footer.module.scss';
+import SocialLink from './SocialLink';
 
 const Footer = () => {
   return (
-    <div className={styles.footer}>
-      <div className={styles.footer__info}>
-        <p className={styles.footer__info__text}>Manuaalista menoa jo vuodesta 2015!</p>
-        <p className={styles.footer__info__text}>ttymi@lists.tuni.fi</p>
-        <p className={styles.footer__info__text}>© 2023 TTYMI</p>
+    <footer className='bg-ttymi-dark text-white px-4 py-6 z-50 flex flex-row justify-between items-center gap-4'>
+      <div className='flex flex-col items-start gap-1'>
+        <p className='text-sm m-0'>Manuaalista menoa jo vuodesta 2015!</p>
+        <p className='text-sm m-0 hover:underline cursor-text'>ttymi@lists.tuni.fi</p>
+        <p className='text-sm m-0'>© 2023 TTYMI</p>
       </div>
 
-      {/* <Image className={styles.footer__logo} src={require('../../public/logo-white.png')} alt='logo' /> */}
-
-      <div className={styles.footer__links}>
-        <Link className={styles.footer__linkbg} href='https://www.instagram.com/ttymi_ry/' target='_blank'>
-          <Image className={styles.footer__icon} src={require('../../public/insta.svg')} alt='instagram' />
-        </Link>
-        <Link className={styles.footer__linkbg} href='https://www.facebook.com/Teekkarivisa3/' target='_blank'>
-          <Image className={styles.footer__icon} src={require('../../public/face.svg')} alt='facebook' />
-        </Link>
+      <div className='flex flex-row gap-4'>
+        <SocialLink href='https://www.instagram.com/ttymi_ry/' iconSrc='/insta.svg' altText='instagram' />
+        <SocialLink href='https://www.facebook.com/Teekkarvisa3/' iconSrc='/face.svg' altText='facebook' />
       </div>
-    </div>
+    </footer>
   );
 };
 

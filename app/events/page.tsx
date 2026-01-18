@@ -1,8 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from './Events.module.scss';
+import type { Metadata } from 'next';
 import { getImgComponent } from '@/utils';
 import { EventType } from '@/types';
+import { Calendar1, Clock } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'TTYMI - Tapahtumat',
+};
 
 const getEvents = async () => {
   try {
@@ -19,15 +24,22 @@ const getEvents = async () => {
 const Event = ({ event }: { event: EventType }) => {
   const date = new Date(event.datetime);
   return (
-    <Link className={styles.event} href={`/events/${event.id}`}>
-      <div className={styles.event__image}>{getImgComponent(event)}</div>
-      <div className={styles.event__content}>
-        <h2 className={styles.event__title}>{event.title}</h2>
-        <div className={styles.event__date}>
-          <Image className={styles.event__date__icon} src={require('../../public/calendar.png')} alt='calendar' />
-          <p className={styles.event__date__text}>{date.toLocaleDateString('fi-FI', {})}</p>
-          <Image className={styles.event__date__icon} src={require('../../public/clock.png')} alt='location' />
-          <p className={styles.event__date__text}>
+    <Link
+      className='flex flex-row bg-white text-black h-[35rem] mb-16 shadow-lg transition-all duration-150 hover:scale-[1.0075] max-[1300px]:h-[25rem] max-[1024px]:h-[20rem] max-[867px]:h-[15rem] max-[768px]:h-[9rem] max-[768px]:mb-6 overflow-hidden'
+      href={`/events/${event.id}`}
+    >
+      <div className='h-full aspect-square'>{getImgComponent(event)}</div>
+      <div className='p-8 overflow-hidden max-[540px]:p-4 flex flex-col justify-center'>
+        <h2 className='text-[2rem] font-semibold p-0 m-0 max-[867px]:text-[1.5rem] max-[540px]:text-[1rem]'>
+          {event.title}
+        </h2>
+        <div className='flex flex-row items-center m-0 p-0 my-4 max-[867px]:my-1'>
+          <Calendar1 className='max-[867px]:scale-75' />
+          <p className='text-[1.45rem] font-semibold m-[0_1.5rem_0_0.5rem] max-[867px]:text-[1rem] max-[867px]:mx-1 max-[540px]:text-[0.75rem] max-[540px]:ml-0'>
+            {date.toLocaleDateString('fi-FI', {})}
+          </p>
+          <Clock className='max-[867px]:scale-75' />
+          <p className='text-[1.45rem] font-semibold m-[0_1.5rem_0_0.5rem] max-[867px]:text-[1rem] max-[867px]:mx-1 max-[540px]:text-[0.75rem] max-[540px]:ml-0'>
             {date.toLocaleTimeString('fi-FI', {
               hour12: false,
               hour: 'numeric',
@@ -36,7 +48,9 @@ const Event = ({ event }: { event: EventType }) => {
             })}
           </p>
         </div>
-        <p className={styles.event__text}>{event.content}</p>
+        <p className='text-[1.25rem] font-medium leading-[1.45] whitespace-pre-wrap overflow-hidden text-ellipsis line-clamp-[14] max-[1300px]:line-clamp-8 max-[1024px]:line-clamp-4 max-[867px]:text-base max-[867px]:mt-0 max-[540px]:line-clamp-3 max-[540px]:text-[0.75rem]'>
+          {event.content}
+        </p>
       </div>
     </Link>
   );
@@ -46,15 +60,15 @@ const EventsPage = async () => {
   const events = await getEvents();
 
   return (
-    <div className={styles.events}>
-      <div className={styles.events__container}>
-        <h1 className={styles.events__title}>TAPAHTUMAT</h1>
+    <div className='bg-ttymi-gradient min-h-[78vh]'>
+      <div className='m-0 p-[2rem_6rem] max-[768px]:p-[1.2rem_1.2rem]'>
+        <h1 className='text-[2.5rem] font-semibold m-[0_0_4rem_0] text-white uppercase'>TAPAHTUMAT</h1>
         {events.length > 0 ? (
           events?.map((event) => {
             return <Event key={event.id} event={event} />;
           })
         ) : (
-          <p className={styles.events__text}>404 Tapahtumien haku epäonnistui...</p>
+          <p className='text-white'>404 Tapahtumien haku epäonnistui...</p>
         )}
       </div>
     </div>
