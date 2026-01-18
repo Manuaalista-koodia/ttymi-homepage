@@ -50,22 +50,20 @@ const AboutPage = () => {
         <div className='bg-white text-black rounded-t-[2rem] p-4 pb-16 w-full relative z-10 md:p-[3rem_6rem] md:w-[80%] overflow-x-hidden'>
           <div className='flex flex-row pb-12 overflow-hidden max-[1300px]:flex-col max-[1300px]:items-center max-[1300px]:p-4 max-[768px]:p-0'>
             <div className='flex flex-col mt-4'>
-              <h1 className='text-[2.5rem] font-semibold mb-4 max-[1300px]:text-[2rem] max-[768px]:text-[1.5rem]'>
-                MIKÄ IHMEEN TTYMI?
-              </h1>
-              <p className='text-[1.75rem] mt-8 leading-[1.5] font-normal max-[1300px]:text-[1.5rem] max-[768px]:text-[1.2rem]'>
+              <h1 className='text-3xl font-semibold mb-4'>MIKÄ IHMEEN TTYMI?</h1>
+              <p className='text-xl mt-8 leading-relaxed font-normal'>
                 TTYMI ry on Hervannasta lähtöinen opiskelijakerho. TTYMI on mukana tekemässä Tamperelaista opiskelija
                 yhteisöä mm. järjestämällä erilaisia tapahtumia. Ydintoimintaamme onkin kaikille avoimien Teekkarivisan
                 järjestäminen. TTYMI osallistuu ahkerasti myös ylioppilaskunnan ja teekkariyhdistyksen tapahtumiin,
                 kuten erilaisiin rastikierroksiin ja tietenkin Wappuun! Teemme toimintaamme rennolla otteella ja pilke
                 silmäkulmassa. Jäsenemme voit tunnistaa vihreistä liiveistä ja manuaalisesta menosta.
               </p>
-              <p className='text-[1.75rem] mt-8 leading-[1.5] font-normal max-[1300px]:text-[1.5rem] max-[768px]:text-[1.2rem]'>
+              <p className='text-xl mt-8 leading-relaxed font-normal'>
                 Voit seurata toimintaamme parhaiten Instagramista!
               </p>
             </div>
             <Image
-              className='ml-16 mt-20 w-[30rem] h-[30rem] max-[1300px]:m-4 max-[768px]:-m-8 max-[768px]:scale-75'
+              className='ml-16 mt-20 w-[25rem] h-[25rem] max-[1300px]:m-4 max-[768px]:-m-8 max-[768px]:scale-75'
               src={require('../../public/patch.jpg')}
               alt='logo'
               width={2048}
@@ -76,35 +74,31 @@ const AboutPage = () => {
           <div className='flex flex-row-reverse pb-12 overflow-hidden max-[1300px]:flex-col max-[1300px]:items-center'>
             <div className='flex flex-col mt-4'>
               <div className='flex flex-row'>
-                <h1 className='text-[2.5rem] font-semibold mb-4 max-[1300px]:text-[2rem] max-[768px]:text-[1.5rem]'>
-                  TEEKKARIVISAT
-                </h1>
+                <h1 className='text-3xl font-semibold mb-4'>TEEKKARIVISAT</h1>
               </div>
-              <p className='text-[1.75rem] mt-8 leading-[1.5] font-normal max-[1300px]:text-[1.5rem] max-[768px]:text-[1.2rem]'>
+              <p className='text-xl mt-8 leading-relaxed font-normal'>
                 Teekkarivisa on TTYMIn perinteinen noin kuukausittain järjestettävät pubivisa/tietokilpailu
                 Teekkari-twistillä! Teekkarivisaan voi osallistua yksin tai parhaan kokemuksen takaamiseksi 4 henkilön
                 joukkueella. Teekkarivisaan osallistuminen on ilmaista ja kaikille avointa. Teekkarivisojen ajankohdista
                 tiedotetaan TTYMIn someissa sekä muissa tiedotuskanavissa.
               </p>
 
-              <p className='text-[1.75rem] mt-8 leading-[1.5] font-normal max-[1300px]:text-[1.5rem] max-[768px]:text-[1.2rem]'>
+              <p className='text-xl mt-8 leading-relaxed font-normal'>
                 Haluatko Teekkarivisan myös omaan tapahtumaasi? TTYMI tekee myös visoja räätälöitynä sinun
                 tapahtumakonseptiin! Pyydä tarjous osoitteessa{' '}
-                <span className='text-[#0a7a2f] font-bold underline'>ttymi@lists.tuni.fi</span>
+                <span className='text-ttymi-green font-bold underline'>ttymi@lists.tuni.fi</span>
                 {` `}tai vedä TTYMIläistä <del>hihasta</del> liivistä.
               </p>
               <Link
-                className='flex flex-row items-center text-white bg-[#0a7a2f] rounded-2xl border-2 border-transparent px-6 shadow-md cursor-pointer w-fit transition-all duration-150 hover:bg-[#043e18] max-[768px]:px-4 mt-8'
+                className='flex flex-row items-center text-white bg-[#0a7a2f] rounded-2xl border-2 border-transparent px-6 shadow-md cursor-pointer w-fit transition-all duration-150 hover:bg-ttymi-dark max-[768px]:px-4 mt-8'
                 href={'/visa'}
               >
                 <div className='w-0 h-0 border-t-[1rem] border-t-transparent border-b-[1rem] border-b-transparent border-l-[1.5rem] border-l-white mr-3 ml-2 max-[768px]:border-t-[0.75rem] max-[768px]:border-b-[0.75rem] max-[768px]:border-l-[1.25rem] max-[768px]:mr-2 max-[768px]:ml-1' />
-                <p className='text-2xl font-semibold tracking-wide m-[1.25rem_0.5rem] max-[768px]:text-base'>
-                  TILASTOT
-                </p>
+                <p className='text-xl font-semibold tracking-wide m-[1.25rem_0.5rem] max-[768px]:text-base'>TILASTOT</p>
               </Link>
             </div>
             <Image
-              className='mr-16 mt-4 w-[33rem] h-[33rem] max-[1300px]:m-4 max-[768px]:w-[25rem] max-[768px]:h-[25rem] max-[768px]:-m-8 max-[768px]:scale-75'
+              className='mr-16 mt-4 w-[25rem] h-[25rem] max-[1300px]:m-4 max-[768px]:w-[25rem] max-[768px]:h-[25rem] max-[768px]:-m-8 max-[768px]:scale-75'
               src='/visa.png'
               alt='visa'
               width={2048}
