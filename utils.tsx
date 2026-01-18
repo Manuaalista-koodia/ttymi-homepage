@@ -49,7 +49,7 @@ const NAMES = [
 export const getImgComponent = (event: EventType) => {
   const commonProps = {
     alt: `${event.title}-image`,
-    className: 'object-cover block',
+    className: 'object-cover block w-full h-full',
     style: { objectFit: 'cover' as const },
   };
 
@@ -59,8 +59,8 @@ export const getImgComponent = (event: EventType) => {
         src='/placeholder.png'
         alt={commonProps.alt}
         className={commonProps.className}
-        width={500}
-        height={500}
+        width={1000}
+        height={1000}
         style={commonProps.style}
       />
     );
@@ -71,8 +71,8 @@ export const getImgComponent = (event: EventType) => {
       alt={commonProps.alt}
       className={commonProps.className}
       style={commonProps.style}
-      width={500}
-      height={500}
+      width={1000}
+      height={1000}
     />
   );
 };
