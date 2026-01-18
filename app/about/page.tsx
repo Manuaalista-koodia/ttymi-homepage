@@ -11,7 +11,14 @@ const Carousel = () => {
     <div className='absolute top-0 left-0 overflow-hidden z-[1] w-full' ref={emblaRef}>
       <div className='flex'>
         <div className='flex-[0_0_100%] min-w-0'>
-          <Image className='w-full h-screen object-cover' src='/mansikkapojat.jpg' alt='1' width={2048} height={2048} />
+          <Image
+            className='w-full h-screen object-cover'
+            src='/mansikkapojat.jpg'
+            alt='1'
+            width={2048}
+            height={2048}
+            priority
+          />
         </div>
         <div className='flex-[0_0_100%] min-w-0'>
           <Image className='w-full h-screen object-cover' src='/excu.jpg' alt='2' width={2048} height={2048} />

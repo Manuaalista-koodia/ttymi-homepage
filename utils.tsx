@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image';
 import { EventType } from '@/types';
 import names from './ttymi-name.json';
@@ -67,11 +66,13 @@ export const getImgComponent = (event: EventType) => {
     );
   }
   return (
-    <img
+    <Image
       src={`https://ttymi-homepage.pockethost.io/api/files/events/${event.id}/${event.image}`}
       alt={commonProps.alt}
       className={commonProps.className}
       style={commonProps.style}
+      width={500}
+      height={500}
     />
   );
 };

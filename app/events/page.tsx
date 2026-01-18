@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const getEvents = async () => {
   try {
     const res = await fetch('https://ttymi-homepage.pockethost.io/api/collections/events/records?sort=-datetime', {
-      cache: 'no-store',
+      next: { revalidate: 3600 },
     });
     const data = await res.json();
     return data?.items as EventType[];

@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { X, Menu } from 'lucide-react';
@@ -7,19 +7,8 @@ import { Links } from './Links';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(true);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const openMenu = () => {
+  const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
@@ -30,20 +19,23 @@ const Navbar = () => {
           <Image src='/logo-white.png' alt='logo' width={250} height={250} />
         </div>
       </Link>
-      <>
-        {!isMobile ? (
-          <Links isMobile={false} />
-        ) : (
-          <div>
-            {menuOpen ? (
-              <X className='mr-7 w-6 h-6 cursor-pointer text-white' onClick={openMenu} />
-            ) : (
-              <Menu className='mr-7 w-6 h-6 cursor-pointer text-white' onClick={openMenu} />
-            )}
-            <Links isMobile={true} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-          </div>
-        )}
-      </>
+
+      {/* Desktop Links */}
+      <div className='hidden md:block'>
+        <Links isMobile={false} />
+      </div>
+
+      {/* Mobile Menu Icon */}
+      <div className='md:hidden flex items-center pr-4'>
+        <button onClick={toggleMenu} className='text-white focus:outline-none' aria-label='Toggle menu'>
+          {menuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
+        </button>
+      </div>
+
+      {/* Mobile Links */}
+      <div className='md:hidden'>
+        <Links isMobile={true} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      </div>
     </nav>
   );
 };

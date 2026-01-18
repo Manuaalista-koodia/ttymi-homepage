@@ -11,7 +11,7 @@ const getEvents = async () => {
     const res = await fetch(
       'https://ttymi-homepage.pockethost.io/api/collections/events/records?page=1&perPage=3&sort=-datetime',
       {
-        cache: 'no-store',
+        next: { revalidate: 3600 },
       },
     );
     const data = await res.json();

@@ -18,7 +18,8 @@ const config: Config = {
         ttymi: '0px -7px 27px 2px rgba(0, 0, 0, 0.15)',
       },
       fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif'],
+        sans: ['var(--font-montserrat)', 'sans-serif'],
+        montserrat: ['var(--font-montserrat)', 'sans-serif'],
       },
     },
   },
