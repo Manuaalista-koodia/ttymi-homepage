@@ -57,20 +57,20 @@ const AboutPage = () => {
         <div className='bg-white text-black rounded-t-[2rem] p-4 pb-16 w-full relative z-10 md:p-[3rem_6rem] md:w-[80%] overflow-x-hidden'>
           <div className='flex flex-row pb-12 overflow-hidden max-[1300px]:flex-col max-[1300px]:items-center max-[1300px]:p-4 max-[768px]:p-0'>
             <div className='flex flex-col mt-4'>
-              <h1 className='text-3xl font-semibold mb-4'>MIKÄ IHMEEN TTYMI?</h1>
-              <p className='text-xl mt-8 leading-relaxed font-normal'>
+              <h1 className='text-xl md:text-3xl font-semibold mb-4'>MIKÄ IHMEEN TTYMI?</h1>
+              <p className='text-base md:text-xl mt-8 leading-relaxed font-normal'>
                 TTYMI ry on Hervannasta lähtöinen opiskelijakerho. TTYMI on mukana tekemässä Tamperelaista opiskelija
                 yhteisöä mm. järjestämällä erilaisia tapahtumia. Ydintoimintaamme onkin kaikille avoimien Teekkarivisan
                 järjestäminen. TTYMI osallistuu ahkerasti myös ylioppilaskunnan ja teekkariyhdistyksen tapahtumiin,
                 kuten erilaisiin rastikierroksiin ja tietenkin Wappuun! Teemme toimintaamme rennolla otteella ja pilke
                 silmäkulmassa. Jäsenemme voit tunnistaa vihreistä liiveistä ja manuaalisesta menosta.
               </p>
-              <p className='text-xl mt-8 leading-relaxed font-normal'>
+              <p className='text-base md:text-xl mt-8 leading-relaxed font-normal'>
                 Voit seurata toimintaamme parhaiten Instagramista!
               </p>
             </div>
             <Image
-              className='ml-16 mt-20 w-[25rem] h-[25rem] max-[1300px]:m-4 max-[768px]:-m-8 max-[768px]:scale-75'
+              className='ml-16 mt-20 w-[25rem] h-[25rem] max-[1300px]:m-4 max-[768px]:w-64 max-[768px]:h-64 object-cover aspect-square rounded-2xl'
               src={require('../../public/patch.jpg')}
               alt='logo'
               width={2048}
@@ -81,16 +81,16 @@ const AboutPage = () => {
           <div className='flex flex-row-reverse pb-12 overflow-hidden max-[1300px]:flex-col max-[1300px]:items-center'>
             <div className='flex flex-col mt-4'>
               <div className='flex flex-row'>
-                <h1 className='text-3xl font-semibold mb-4'>TEEKKARIVISAT</h1>
+                <h1 className='text-xl md:text-3xl font-semibold mb-4'>TEEKKARIVISAT</h1>
               </div>
-              <p className='text-xl mt-8 leading-relaxed font-normal'>
+              <p className='text-base md:text-xl mt-8 leading-relaxed font-normal'>
                 Teekkarivisa on TTYMIn perinteinen noin kuukausittain järjestettävät pubivisa/tietokilpailu
                 Teekkari-twistillä! Teekkarivisaan voi osallistua yksin tai parhaan kokemuksen takaamiseksi 4 henkilön
                 joukkueella. Teekkarivisaan osallistuminen on ilmaista ja kaikille avointa. Teekkarivisojen ajankohdista
                 tiedotetaan TTYMIn someissa sekä muissa tiedotuskanavissa.
               </p>
 
-              <p className='text-xl mt-8 leading-relaxed font-normal'>
+              <p className='text-base md:text-xl mt-8 leading-relaxed font-normal'>
                 Haluatko Teekkarivisan myös omaan tapahtumaasi? TTYMI tekee myös visoja räätälöitynä sinun
                 tapahtumakonseptiin! Pyydä tarjous osoitteessa{' '}
                 <span className='text-ttymi-green font-bold underline'>ttymi@lists.tuni.fi</span>
@@ -101,11 +101,11 @@ const AboutPage = () => {
                 href={'/visa'}
               >
                 <div className='w-0 h-0 border-t-[1rem] border-t-transparent border-b-[1rem] border-b-transparent border-l-[1.5rem] border-l-white mr-3 ml-2 max-[768px]:border-t-[0.75rem] max-[768px]:border-b-[0.75rem] max-[768px]:border-l-[1.25rem] max-[768px]:mr-2 max-[768px]:ml-1' />
-                <p className='text-xl font-semibold tracking-wide m-[1.25rem_0.5rem] max-[768px]:text-base'>TILASTOT</p>
+                <p className='text-base md:text-xl font-semibold tracking-wide m-[1.25rem_0.5rem]'>TILASTOT</p>
               </Link>
             </div>
             <Image
-              className='mr-16 mt-4 w-[25rem] h-[25rem] max-[1300px]:m-4 max-[768px]:w-[25rem] max-[768px]:h-[25rem] max-[768px]:-m-8 max-[768px]:scale-75'
+              className='mr-16 mt-4 w-[25rem] h-[25rem] max-[1300px]:m-4 max-[768px]:w-64 max-[768px]:h-64 object-cover aspect-square rounded-2xl'
               src='/visa.png'
               alt='visa'
               width={2048}

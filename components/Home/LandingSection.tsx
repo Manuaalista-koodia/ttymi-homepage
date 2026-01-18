@@ -6,7 +6,7 @@ import { CustomButton } from '@/components/ActionButton/CustomButton';
 export const LandingSection: React.FC = () => {
   return (
     <div className='relative flex flex-col lg:flex-row items-start justify-between px-8 md:px-16 lg:px-72 xl:px-96 py-20 lg:py-36'>
-      <div className='relative w-[50rem] z-10 lg:w-full flex flex-col gap-6 mt-36 lg:mt-24'>
+      <div className='relative w-sm z-10 lg:w-full flex flex-col gap-6 mt-36 lg:mt-24'>
         <div className='flex flex-row items-baseline text-white gap-4 lg:gap-2'>
           <h1 className='p-0 m-0 text-7xl lg:text-9xl font-semibold'>TTYMI</h1>
           <h1 className='p-0 m-0 text-4xl font-medium'>ry</h1>
@@ -16,8 +16,8 @@ export const LandingSection: React.FC = () => {
           <p>{`${getTTYMIName()} on Tampereella toimiva opiskelijakerho. Manuaalista menoa jo vuodesta 2015!`}</p>
         </div>
 
-        <div className='ml-4 lg:ml-0'>
-          <CustomButton href='/jaseneksi' label='JÄSENEKSI?' variant='large' />
+        <div className='ml-0'>
+          <CustomButton href='/jaseneksi' label='JÄSENEKSI?' variant='medium' />
         </div>
       </div>
 

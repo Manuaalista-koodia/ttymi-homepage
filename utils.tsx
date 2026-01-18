@@ -49,7 +49,7 @@ const NAMES = [
 export const getImgComponent = (event: EventType) => {
   const commonProps = {
     alt: `${event.title}-image`,
-    className: 'h-full w-full object-cover block',
+    className: 'object-cover block',
     style: { objectFit: 'cover' as const },
   };
 

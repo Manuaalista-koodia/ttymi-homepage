@@ -29,7 +29,7 @@ const Event = ({ event }: { event: EventType }) => {
       href={`/events/${event.id}`}
     >
       <div className='h-full aspect-square'>{getImgComponent(event)}</div>
-      <div className='p-8 overflow-hidden max-[540px]:p-4 flex flex-col justify-center'>
+      <div className='p-4 overflow-hidden max-[540px]:p-3 flex flex-col justify-center gap-0'>
         <h2 className='text-[2rem] font-semibold p-0 m-0 max-[867px]:text-[1.5rem] max-[540px]:text-[1rem]'>
           {event.title}
         </h2>
@@ -48,7 +48,7 @@ const Event = ({ event }: { event: EventType }) => {
             })}
           </p>
         </div>
-        <p className='text-[1.25rem] font-medium leading-[1.45] whitespace-pre-wrap overflow-hidden text-ellipsis line-clamp-[14] max-[1300px]:line-clamp-8 max-[1024px]:line-clamp-4 max-[867px]:text-base max-[867px]:mt-0 max-[540px]:line-clamp-3 max-[540px]:text-[0.75rem]'>
+        <p className='text-[1.25rem] font-medium leading-[1] whitespace-pre-wrap overflow-hidden text-ellipsis line-clamp-[14] max-[1300px]:line-clamp-8 max-[1024px]:line-clamp-4 max-[867px]:text-base max-[867px]:mt-0 max-[540px]:line-clamp-3 max-[540px]:text-[0.75rem]'>
           {event.content}
         </p>
       </div>
